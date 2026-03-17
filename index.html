@@ -1116,79 +1116,117 @@
       background: var(--bg-white);
     }
 
-    .pricing-cards {
-      max-width: 1000px;
+    .pricing-transparent {
+      max-width: 900px;
       margin: 0 auto;
+    }
+
+    .cost-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr 1fr;
       gap: 24px;
-      align-items: start;
+      margin-bottom: 40px;
     }
 
-    .pricing-card {
-      background: var(--bg-white);
+    .cost-card {
+      background: var(--bg-light);
       border-radius: var(--radius-lg);
+      padding: 28px 24px;
       border: 1px solid var(--border-light);
-      padding: 36px 28px;
-      position: relative;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .pricing-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
     }
 
-    .pricing-card.featured {
-      border: 2px solid transparent;
-      background-clip: padding-box;
-      padding: 44px 28px 36px;
-    }
-    .pricing-card.featured::before {
-      content: '';
-      position: absolute;
-      inset: -2px;
-      border-radius: calc(var(--radius-lg) + 2px);
-      background: linear-gradient(135deg, var(--accent), var(--accent-bright));
-      z-index: -1;
-    }
-
-    .pricing-badge {
-      position: absolute;
-      top: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: linear-gradient(135deg, var(--accent), var(--accent-bright));
-      color: var(--bg-dark);
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      padding: 5px 16px;
-      border-radius: 20px;
-      white-space: nowrap;
-    }
-
-    .pricing-tier {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-    }
-
-    .pricing-amount {
+    .cost-icon {
+      font-size: 1.8rem;
       margin-bottom: 8px;
-      display: flex;
-      align-items: baseline;
-      gap: 2px;
+      display: block;
     }
 
-    .pricing-currency {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.4rem;
-      color: var(--text-dark);
+    .cost-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .cost-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .cost-card li {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      line-height: 1.5;
+    }
+
+    .cost-card li:last-child { border-bottom: none; }
+
+    .pricing-feedback {
+      text-align: center;
+      background: var(--bg-light);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      border: 1px solid var(--border-light);
+    }
+
+    .pricing-feedback h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .pricing-feedback > p {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      max-width: 550px;
+      margin: 0 auto 24px;
+      line-height: 1.5;
+    }
+
+    .pricing-options {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .pricing-option {
+      background: var(--bg-white);
+      border-radius: 10px;
+      padding: 16px 12px;
+      border: 1px solid var(--border-light);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      text-align: center;
+    }
+
+    .pricing-option .material-icons-outlined {
+      font-size: 1.5rem;
+      color: var(--accent);
+    }
+
+    .pricing-option strong {
+      font-size: 0.82rem;
+      color: var(--text-primary);
+    }
+
+    .pricing-option span:last-child {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      line-height: 1.3;
+    }
+
+    @media (max-width: 600px) {
+      .cost-grid { grid-template-columns: 1fr; }
+      .pricing-options { grid-template-columns: repeat(2, 1fr); }
+      .pricing-feedback { padding: 24px 16px; }
     }
 
     .pricing-number {
@@ -2134,68 +2172,64 @@
     <div class="container">
       <div class="section-header reveal">
         <p class="section-eyebrow">Pricing</p>
-        <h2>Pay per guest. Nothing hidden.</h2>
+        <h2>We're figuring this out &mdash; with you.</h2>
+        <p>We want to get pricing right, and that means being transparent about where costs exist and hearing what works for you.</p>
       </div>
 
-      <div class="pricing-cards reveal" data-delay="200">
-        <!-- Starter -->
-        <div class="pricing-card">
-          <div class="pricing-tier">Starter</div>
-          <div class="pricing-amount">
-            <span class="pricing-currency">$</span>
-            <span class="pricing-number">0.50</span>
-            <span class="pricing-per">/ guest</span>
+      <div class="pricing-transparent reveal" data-delay="100">
+        <div class="cost-grid">
+          <div class="cost-card">
+            <span class="material-icons-outlined cost-icon" style="color:#2e7d32;">check_circle</span>
+            <h4>Free for us to deliver</h4>
+            <ul>
+              <li>Guest registration &amp; OTP verification</li>
+              <li>Digital guidebook &amp; CMS</li>
+              <li>Admin dashboard</li>
+              <li>Security deposit management</li>
+              <li>Automated messaging (PMS channel)</li>
+              <li>Noise monitoring enhancement</li>
+            </ul>
           </div>
-          <p class="pricing-props">Up to 2 properties</p>
-          <ul class="pricing-features">
-            <li>Guest registration &amp; verification</li>
-            <li>Smart lock integration</li>
-            <li>Security deposits (Stripe)</li>
-            <li>Digital guidebook</li>
-            <li>Email &amp; SMS messaging</li>
-          </ul>
-          <button class="btn-outline btn-block" onclick="openModal('beta')">Apply for Access</button>
+          <div class="cost-card">
+            <span class="material-icons-outlined cost-icon" style="color:#e65100;">payments</span>
+            <h4>Where we have costs</h4>
+            <ul>
+              <li><strong>Smart lock APIs</strong> &mdash; $5/device/mo via third-party APIs (we're working on direct integrations to reduce this)</li>
+              <li><strong>SMS verification</strong> &mdash; ~$0.01 per text message</li>
+              <li><strong>Thermostat/HVAC APIs</strong> &mdash; varies by device (some free via direct integration, some $5/device/mo)</li>
+            </ul>
+          </div>
         </div>
 
-        <!-- Professional -->
-        <div class="pricing-card featured">
-          <div class="pricing-badge">Most Popular</div>
-          <div class="pricing-tier">Professional</div>
-          <div class="pricing-amount">
-            <span class="pricing-currency">$</span>
-            <span class="pricing-number">0.35</span>
-            <span class="pricing-per">/ guest</span>
+        <div class="pricing-feedback reveal" data-delay="200">
+          <h3>Help us price this right.</h3>
+          <p>We're exploring several models and want your input. What would this platform be worth to you, and how would you prefer to pay?</p>
+          <div class="pricing-options">
+            <div class="pricing-option">
+              <span class="material-icons-outlined">home</span>
+              <strong>Per property</strong>
+              <span>Flat monthly fee per property</span>
+            </div>
+            <div class="pricing-option">
+              <span class="material-icons-outlined">group</span>
+              <strong>Per guest</strong>
+              <span>Pay only when guests register</span>
+            </div>
+            <div class="pricing-option">
+              <span class="material-icons-outlined">devices</span>
+              <strong>Per device</strong>
+              <span>Based on connected smart home devices</span>
+            </div>
+            <div class="pricing-option">
+              <span class="material-icons-outlined">message</span>
+              <strong>Per message</strong>
+              <span>Pay for SMS/email sends</span>
+            </div>
           </div>
-          <p class="pricing-props">Up to 15 properties</p>
-          <ul class="pricing-features">
-            <li>Everything in Starter</li>
-            <li>Noise enhancement (Minut / NoiseAware)</li>
-            <li>AI guest assistant</li>
-            <li>PMS messaging (any platform)</li>
-            <li>Custom branding</li>
-            <li>Priority support</li>
-          </ul>
-          <button class="btn-primary btn-block" onclick="openModal('beta')">Apply for Access</button>
-        </div>
-
-        <!-- Portfolio -->
-        <div class="pricing-card">
-          <div class="pricing-tier">Portfolio</div>
-          <div class="pricing-amount">
-            <span class="pricing-currency">$</span>
-            <span class="pricing-number">0.20</span>
-            <span class="pricing-per">/ guest</span>
-          </div>
-          <p class="pricing-props">Unlimited properties</p>
-          <ul class="pricing-features">
-            <li>Everything in Professional</li>
-            <li>API access</li>
-            <li>Multi-property dashboard</li>
-            <li>Custom integrations</li>
-            <li>Volume discounts</li>
-            <li>Dedicated account manager</li>
-          </ul>
-          <button class="btn-outline btn-block" onclick="openModal('beta')">Contact Sales</button>
+          <p style="margin-top:24px;">
+            <button class="btn-primary btn-lg" onclick="openModal('beta')">Share Your Pricing Feedback</button>
+          </p>
+          <p style="font-size:0.82rem;color:var(--text-muted);margin-top:12px;">Early access users will help shape our pricing. Your input directly influences what we charge.</p>
         </div>
       </div>
     </div>
