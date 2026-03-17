@@ -548,6 +548,74 @@
       line-height: 1.55;
     }
 
+    /* ─── Core Principles Section ──────────────────────────────────────── */
+    .principles-section {
+      padding: 100px 32px;
+      background: var(--bg-light);
+    }
+
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .principle-card {
+      background: var(--bg-white);
+      border-radius: 12px;
+      padding: 32px 28px;
+      border: 1px solid #E2E8F0;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      position: relative;
+    }
+
+    .principle-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      border-color: var(--accent);
+    }
+
+    .principle-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--accent);
+      opacity: 0.2;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .principle-card:hover .principle-number {
+      opacity: 0.5;
+    }
+
+    .principle-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+
+    .principle-card p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .principle-card p strong {
+      color: var(--text-primary);
+    }
+
+    @media (max-width: 900px) {
+      .principles-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .principles-grid { grid-template-columns: 1fr; }
+      .principles-section { padding: 60px 16px; }
+    }
+
     /* ─── Solution Section (LIGHT) ────────────────────────────────────── */
     .solution-section {
       padding: 100px 32px;
@@ -1640,6 +1708,57 @@
             <h4>Manual compliance is broken</h4>
             <p>Guest registration compliance? You're doing it by hand or not at all. Spreadsheets, Google Forms, honor system &mdash; none of it scales.</p>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       CORE PRINCIPLES — WHY REGISTRATION DONE RIGHT MATTERS
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="principles-section" id="principles">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Core Principles</p>
+        <h2>Why guest registration done right changes everything.</h2>
+        <p>Most hosts skip registration or do it halfway. Here's what happens when you actually enforce it &mdash; verified, automated, and gated behind access.</p>
+      </div>
+
+      <div class="principles-grid">
+        <div class="principle-card reveal" data-delay="0">
+          <div class="principle-number">01</div>
+          <h3>Gate what they can't bypass</h3>
+          <p>WiFi gating is defeated in seconds &mdash; mobile data, fake emails, shared credentials. <strong>Door code gating is unbypassable.</strong> No registration and deposit? No entry. That's real enforcement, not a suggestion.</p>
+        </div>
+
+        <div class="principle-card reveal" data-delay="100">
+          <div class="principle-number">02</div>
+          <h3>Verify, don't trust</h3>
+          <p>Every email gets a 6-digit OTP code. Every phone gets an SMS verification. No reuse across guests &mdash; each adult provides unique, verified contact info. <strong>You get real data, not a junk drawer of duplicates and fakes.</strong></p>
+        </div>
+
+        <div class="principle-card reveal" data-delay="200">
+          <div class="principle-number">03</div>
+          <h3>Every adult, not just the booker</h3>
+          <p>The booker's info is table stakes. GuestKey collects verified data from <strong>every adult staying at your property</strong>. When 10 adults register, you have 10 verified names, emails, phones, and addresses &mdash; not one.</p>
+        </div>
+
+        <div class="principle-card reveal" data-delay="300">
+          <div class="principle-number">04</div>
+          <h3>Make compliance automatic</h3>
+          <p>Wisconsin ATCP 72, local lodging ordinances, tax reporting &mdash; jurisdictions increasingly require guest registration. <strong>GuestKey makes compliance a byproduct of check-in</strong>, not an extra task you forget.</p>
+        </div>
+
+        <div class="principle-card reveal" data-delay="400">
+          <div class="principle-number">05</div>
+          <h3>Data that feeds everything else</h3>
+          <p>Registered guest data pipes directly into noise monitoring (all adults get alerts, not just the booker), marketing campaigns, and future communications. <strong>Registration isn't the end &mdash; it's the foundation.</strong></p>
+        </div>
+
+        <div class="principle-card reveal" data-delay="500">
+          <div class="principle-number">06</div>
+          <h3>Give value to get value</h3>
+          <p>Registration feels strict at first. But when guests see what they unlock &mdash; smart home controls, a beautiful house guide, live noise visibility &mdash; <strong>giving their info becomes a fair trade, not a burden.</strong></p>
         </div>
       </div>
     </div>
