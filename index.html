@@ -1526,6 +1526,7 @@
         <div class="reveal" data-delay="0">
           <div class="hero-tags">
             <span class="hero-tag">Guest Registration</span>
+            <span class="hero-tag">Security Deposits</span>
             <span class="hero-tag">Smart Home</span>
             <span class="hero-tag">Digital Guidebook</span>
             <span class="hero-tag">Noise Monitoring</span>
@@ -1775,10 +1776,11 @@
           <button class="device-tab" data-tab="complete" onclick="switchTab('complete')">Completed</button>
         </div>
         <div class="device-screen">
-          <img src="screenshots/portal-registration.png" alt="Guest registration form with deposit pending" class="active" data-screen="registration" />
-          <img src="screenshots/portal-guidebook.png" alt="Digital guidebook with smart lock controls" data-screen="guidebook" />
-          <img src="screenshots/portal-guidebook-complete.png" alt="Completed registration with full guidebook access" data-screen="complete" />
+          <img src="screenshots/portal-registration.png" alt="Guest registration form with deposit pending" class="active" data-screen="registration" onclick="openScreenshotLightbox(this)" />
+          <img src="screenshots/portal-guidebook.png" alt="Digital guidebook with smart lock controls" data-screen="guidebook" onclick="openScreenshotLightbox(this)" />
+          <img src="screenshots/portal-guidebook-complete.png" alt="Completed registration with full guidebook access" data-screen="complete" onclick="openScreenshotLightbox(this)" />
         </div>
+        <p style="text-align:center;font-size:0.75rem;color:rgba(148,163,184,0.6);margin-top:8px;">Click image to expand</p>
       </div>
 
       <p class="portal-caption reveal" data-delay="300">Real screenshots from the live system &mdash; not mockups.</p>
@@ -2408,7 +2410,37 @@
       navbar.style.background = 'rgba(11, 17, 32, 0.88)';
     }
   }, { passive: true });
+
+  // ─── Screenshot Lightbox ────────────────────────────────────────────────
+  function openScreenshotLightbox(img) {
+    var lb = document.getElementById('screenshotLightbox');
+    var lbImg = document.getElementById('lightboxImg');
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeScreenshotLightbox() {
+    var lb = document.getElementById('screenshotLightbox');
+    lb.classList.remove('active');
+    document.body.style.overflow = '';
+  }
 </script>
+
+<!-- Screenshot Lightbox -->
+<div id="screenshotLightbox" class="ss-lightbox" onclick="closeScreenshotLightbox()">
+  <button class="ss-lightbox-close" onclick="closeScreenshotLightbox()">&times;</button>
+  <img id="lightboxImg" src="" alt="" onclick="event.stopPropagation()" />
+</div>
+
+<style>
+  .ss-lightbox { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:9999; align-items:center; justify-content:center; cursor:zoom-out; }
+  .ss-lightbox.active { display:flex; }
+  .ss-lightbox img { max-width:92vw; max-height:90vh; border-radius:8px; box-shadow:0 8px 32px rgba(0,0,0,0.5); cursor:default; }
+  .ss-lightbox-close { position:absolute; top:16px; right:24px; background:none; border:none; color:#fff; font-size:2.5rem; cursor:pointer; z-index:10000; line-height:1; }
+  .ss-lightbox-close:hover { color:var(--accent-bright); }
+  .device-screen img { cursor:zoom-in; }
+</style>
 
 </body>
 </html>
