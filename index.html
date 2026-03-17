@@ -875,6 +875,97 @@
       color: rgba(148, 163, 184, 0.3);
     }
 
+    /* ─── Modals ──────────────────────────────────────────────────────── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+    }
+    .modal-overlay.active { display: block; }
+
+    .modal-box {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.95);
+      background: var(--bg-white);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      max-width: 480px;
+      width: 90%;
+      max-height: 85vh;
+      overflow-y: auto;
+      z-index: 1001;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.3);
+      opacity: 0;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .modal-box.active {
+      display: block;
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .modal-box h3 {
+      font-size: 1.4rem;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      font-size: 1.6rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      line-height: 1;
+      transition: color 0.2s;
+    }
+    .modal-close-btn:hover { color: var(--text-dark); }
+
+    .modal-input {
+      display: block;
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid var(--border-light);
+      border-radius: var(--radius);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      background: var(--bg-white);
+      outline: none;
+      margin-bottom: 12px;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+    }
+    .modal-input:focus { border-color: var(--accent); }
+    .modal-input::placeholder { color: var(--text-light); }
+
+    .modal-textarea {
+      min-height: 80px;
+      resize: vertical;
+      line-height: 1.5;
+    }
+
+    .modal-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    select.modal-input {
+      cursor: pointer;
+    }
+
     /* ─── Scroll Reveal ────────────────────────────────────────────────── */
     .reveal {
       opacity: 0;
@@ -964,19 +1055,11 @@
         </div>
 
         <div class="reveal" data-delay="450" id="waitlist">
-          <form class="hero-cta" onsubmit="handleHeroSubmit(event)">
-            <input
-              type="email"
-              id="heroEmail"
-              placeholder="your@email.com"
-              class="hero-input"
-              required
-            />
-            <button type="submit" class="btn-primary btn-lg">
-              Join Waitlist
-            </button>
-          </form>
-          <p class="hero-note">Early access launching soon &middot; Be first to know &middot; No spam</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <button class="btn-primary btn-lg" onclick="openModal('beta')">Apply for Early Access</button>
+            <button class="btn-outline btn-lg" onclick="openModal('notify')" style="color:var(--text-on-dark);border-color:rgba(148,163,184,0.3);">Notify Me at Launch</button>
+          </div>
+          <p class="hero-note">Early access launching soon &middot; Limited beta spots &middot; No spam</p>
         </div>
 
       </div>
@@ -1282,6 +1365,45 @@
     </div>
   </footer>
 
+  <!-- ═══ MODALS ═══ -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal()"></div>
+
+  <!-- Beta Application Modal -->
+  <div class="modal-box" id="modal-beta">
+    <div class="modal-close-btn" onclick="closeModal()">&times;</div>
+    <h3>Apply for Early Access</h3>
+    <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:20px;">We're looking for hosts to help shape GuestKey. Tell us about your setup.</p>
+    <form onsubmit="handleBetaSubmit(event)">
+      <input type="email" id="betaEmail" placeholder="Your email" required class="modal-input" />
+      <input type="text" id="betaName" placeholder="Your name" required class="modal-input" />
+      <label class="modal-label">How many properties do you manage?</label>
+      <select id="betaProperties" class="modal-input" required>
+        <option value="">Select...</option>
+        <option value="1">1 property</option>
+        <option value="2-5">2-5 properties</option>
+        <option value="6-15">6-15 properties</option>
+        <option value="16-50">16-50 properties</option>
+        <option value="50+">50+ properties</option>
+      </select>
+      <label class="modal-label">What's your biggest check-in challenge?</label>
+      <textarea id="betaChallenge" placeholder="e.g. guests not registering, no-shows, unauthorized visitors, managing lock codes manually..." class="modal-input modal-textarea"></textarea>
+      <label class="modal-label">What PMS do you use?</label>
+      <input type="text" id="betaPms" placeholder="e.g. Hospitable, Guesty, HostAway, none" class="modal-input" />
+      <button type="submit" class="btn-primary btn-block" id="betaSubmitBtn">Submit Application</button>
+    </form>
+  </div>
+
+  <!-- Notify Me Modal -->
+  <div class="modal-box" id="modal-notify">
+    <div class="modal-close-btn" onclick="closeModal()">&times;</div>
+    <h3>Get Notified at Launch</h3>
+    <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:20px;">Drop your email and we'll let you know when GuestKey is ready.</p>
+    <form onsubmit="handleNotifySubmit(event)">
+      <input type="email" id="notifyEmail" placeholder="your@email.com" required class="modal-input" />
+      <button type="submit" class="btn-primary btn-block" id="notifySubmitBtn">Notify Me</button>
+    </form>
+  </div>
+
 </div><!-- /.landing -->
 
 <script>
@@ -1296,40 +1418,71 @@
   }
 
   function showComingSoon() {
-    document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' });
-    setTimeout(function() { document.getElementById('heroEmail').focus(); }, 600);
+    openModal('beta');
   }
 
-  // ─── Waitlist Form → Slack ─────────────────────────────────────────────────
-  function handleHeroSubmit(e) {
-    e.preventDefault();
-    var email = document.getElementById('heroEmail').value.trim();
-    if (!email) return;
-    var btn = e.target.querySelector('button[type="submit"]');
-    btn.textContent = 'Joining...';
-    btn.disabled = true;
+  // ─── Modal Controls ────────────────────────────────────────────────────────
+  function openModal(type) {
+    document.getElementById('modalOverlay').classList.add('active');
+    document.getElementById('modal-' + type).classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
 
-    fetch('https://guestkey-waitlist.mikeclinton.workers.dev', {
+  function closeModal() {
+    document.getElementById('modalOverlay').classList.remove('active');
+    document.querySelectorAll('.modal-box').forEach(function(m) { m.classList.remove('active'); });
+    document.body.style.overflow = '';
+  }
+
+  // Close on Escape
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+
+  // ─── Waitlist API ──────────────────────────────────────────────────────────
+  var WAITLIST_URL = 'https://guestkey-waitlist.mikeclinton.workers.dev';
+
+  function postToWaitlist(data, btn, originalText, successMsg) {
+    btn.textContent = 'Submitting...';
+    btn.disabled = true;
+    fetch(WAITLIST_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email })
+      body: JSON.stringify(data)
     })
     .then(function(r) { return r.json(); })
-    .then(function(data) {
-      if (data.success) {
-        showToast('You\'re on the list! We\'ll reach out to ' + email + ' soon.');
-        document.getElementById('heroEmail').value = '';
+    .then(function(resp) {
+      if (resp.success) {
+        closeModal();
+        showToast(successMsg);
       } else {
         showToast('Something went wrong. Please try again.');
       }
     })
-    .catch(function() {
-      showToast('Network error. Please try again.');
-    })
-    .finally(function() {
-      btn.textContent = 'Join Waitlist';
-      btn.disabled = false;
-    });
+    .catch(function() { showToast('Network error. Please try again.'); })
+    .finally(function() { btn.textContent = originalText; btn.disabled = false; });
+  }
+
+  function handleBetaSubmit(e) {
+    e.preventDefault();
+    var data = {
+      type: 'beta_application',
+      email: document.getElementById('betaEmail').value.trim(),
+      name: document.getElementById('betaName').value.trim(),
+      properties: document.getElementById('betaProperties').value,
+      challenge: document.getElementById('betaChallenge').value.trim(),
+      pms: document.getElementById('betaPms').value.trim()
+    };
+    postToWaitlist(data, document.getElementById('betaSubmitBtn'), 'Submit Application',
+      'Application received! We\'ll be in touch soon at ' + data.email + '.');
+  }
+
+  function handleNotifySubmit(e) {
+    e.preventDefault();
+    var data = {
+      type: 'notify_me',
+      email: document.getElementById('notifyEmail').value.trim()
+    };
+    postToWaitlist(data, document.getElementById('notifySubmitBtn'), 'Notify Me',
+      'You\'re on the list! We\'ll email ' + data.email + ' when we launch.');
   }
 
   // ─── Lock Animation ───────────────────────────────────────────────────────
