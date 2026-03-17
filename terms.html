@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — GuestKey</title>
+  <meta name="description" content="Terms of Service for GuestKey, a guest experience platform for vacation rental hosts." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%230B1120'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='18' fill='%2306B6D4'%3E%E2%97%86%3C/text%3E%3C/svg%3E" type="image/svg+xml" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ═══════════════════════════════════════════════════════════════════════
+       GuestKey — Terms of Service Page
+       Dark nav + light content body — matches main site aesthetic
+       ═══════════════════════════════════════════════════════════════════════ */
+
+    :root {
+      --bg-dark:            #0B1120;
+      --bg-dark-raised:     #111827;
+      --bg-dark-card:       #1E293B;
+      --bg-light:           #F8FAFC;
+      --bg-white:           #FFFFFF;
+      --text-on-dark:       #F1F5F9;
+      --text-on-dark-muted: #94A3B8;
+      --text-dark:          #0F172A;
+      --text-muted:         #64748B;
+      --text-light:         #94A3B8;
+      --accent:             #06B6D4;
+      --accent-bright:      #22D3EE;
+      --accent-deep:        #0891B2;
+      --accent-muted:       rgba(6, 182, 212, 0.12);
+      --border-dark:        rgba(148, 163, 184, 0.12);
+      --border-light:       #E2E8F0;
+      --radius:             8px;
+      --radius-lg:          16px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-dark);
+      background: var(--bg-light);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    a:hover { color: var(--accent-bright); }
+
+    /* ─── Navigation ────────────────────────────────────────────────────── */
+    .landing-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(11, 17, 32, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .nav-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      color: var(--accent);
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    .brand-text {
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: var(--text-on-dark);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-back {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-on-dark-muted);
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-back:hover { color: var(--text-on-dark); }
+    .nav-back svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* ─── Page Layout ───────────────────────────────────────────────────── */
+    .page-wrapper {
+      padding-top: 80px; /* nav height */
+      min-height: 100vh;
+      background: var(--bg-light);
+    }
+
+    /* ─── Page Header ───────────────────────────────────────────────────── */
+    .page-header {
+      background: var(--bg-dark);
+      padding: 64px 32px 56px;
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .page-header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .page-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .page-header h1 {
+      font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: var(--text-on-dark);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .page-meta {
+      font-size: 0.88rem;
+      color: var(--text-on-dark-muted);
+      line-height: 1.6;
+    }
+
+    .page-meta strong {
+      color: var(--text-on-dark);
+    }
+
+    .legal-notice {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 24px;
+      padding: 16px 20px;
+      background: rgba(6, 182, 212, 0.08);
+      border: 1px solid rgba(6, 182, 212, 0.2);
+      border-radius: var(--radius);
+    }
+
+    .legal-notice-icon {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      margin-top: 1px;
+      color: var(--accent);
+    }
+
+    .legal-notice p {
+      font-size: 0.83rem;
+      color: var(--text-on-dark-muted);
+      line-height: 1.55;
+    }
+
+    /* ─── Table of Contents ─────────────────────────────────────────────── */
+    .toc-section {
+      background: var(--bg-white);
+      border-bottom: 1px solid var(--border-light);
+      padding: 32px;
+    }
+
+    .toc-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .toc-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 6px 24px;
+    }
+
+    .toc-grid a {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      padding: 3px 0;
+      transition: color 0.2s;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .toc-grid a:hover { color: var(--accent); }
+
+    .toc-num {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent);
+      min-width: 20px;
+    }
+
+    /* ─── Content Body ──────────────────────────────────────────────────── */
+    .content-body {
+      padding: 56px 32px 80px;
+    }
+
+    .content-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* ─── Sections ──────────────────────────────────────────────────────── */
+    .tos-section {
+      margin-bottom: 56px;
+      scroll-margin-top: 96px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--border-light);
+    }
+
+    .section-num {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent);
+      background: var(--accent-muted);
+      padding: 3px 9px;
+      border-radius: 20px;
+      flex-shrink: 0;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .section-heading h2 {
+      font-size: 1.22rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+    }
+
+    /* ─── Typography ────────────────────────────────────────────────────── */
+    .tos-section p {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .tos-section p:last-child { margin-bottom: 0; }
+
+    .tos-section ul,
+    .tos-section ol {
+      margin: 12px 0 16px 0;
+      padding-left: 24px;
+    }
+
+    .tos-section li {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      margin-bottom: 7px;
+    }
+
+    .tos-section li:last-child { margin-bottom: 0; }
+
+    .tos-section strong {
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    .tos-section a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: rgba(6, 182, 212, 0.35);
+      text-underline-offset: 2px;
+      transition: color 0.2s, text-decoration-color 0.2s;
+    }
+    .tos-section a:hover {
+      color: var(--accent-bright);
+      text-decoration-color: var(--accent-bright);
+    }
+
+    /* ─── Callout Boxes ─────────────────────────────────────────────────── */
+    .callout {
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      margin: 20px 0;
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    .callout-info {
+      background: rgba(6, 182, 212, 0.06);
+      border-left: 3px solid var(--accent);
+      color: var(--text-muted);
+    }
+
+    .callout-warn {
+      background: rgba(245, 158, 11, 0.06);
+      border-left: 3px solid #F59E0B;
+      color: var(--text-muted);
+    }
+
+    .callout strong {
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    /* ─── Contact Card ──────────────────────────────────────────────────── */
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 24px;
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      margin-top: 16px;
+    }
+
+    .contact-card-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--accent-muted);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--accent);
+    }
+
+    .contact-card-icon svg { width: 20px; height: 20px; }
+
+    .contact-card-text p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .contact-card-text a {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    /* ─── Divider ───────────────────────────────────────────────────────── */
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border-light);
+      margin: 0 0 56px;
+    }
+
+    /* ─── Footer ────────────────────────────────────────────────────────── */
+    .landing-footer {
+      background: var(--bg-dark);
+      padding: 64px 32px 0;
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 2fr;
+      gap: 60px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .footer-brand p {
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: var(--text-on-dark-muted);
+      line-height: 1.6;
+    }
+
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .footer-links h5 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-on-dark-muted);
+      margin-bottom: 16px;
+    }
+
+    .footer-links a {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--text-light);
+      padding: 4px 0;
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+    .footer-links a:hover { color: var(--text-on-dark); }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    .footer-bottom p {
+      font-size: 0.78rem;
+      color: rgba(148, 163, 184, 0.3);
+    }
+
+    /* ─── Responsive ────────────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav-inner { padding: 14px 20px; }
+
+      .page-header { padding: 48px 20px 40px; }
+
+      .toc-section { padding: 24px 20px; }
+      .toc-grid { grid-template-columns: 1fr 1fr; gap: 4px 16px; }
+
+      .content-body { padding: 40px 20px 60px; }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .footer-links { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .landing-footer { padding: 48px 20px 0; }
+    }
+
+    @media (max-width: 480px) {
+      .toc-grid { grid-template-columns: 1fr; }
+      .footer-links { grid-template-columns: 1fr; }
+
+      .section-heading {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAVIGATION ═══════════════════════════════════════════════════════ -->
+  <nav class="landing-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <span class="brand-mark">&#9670;</span>
+        <span class="brand-text">GuestKey</span>
+      </a>
+      <a href="/" class="nav-back">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M10 3L5 8l5 5" />
+        </svg>
+        Back to Home
+      </a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- ═══ PAGE HEADER ═══════════════════════════════════════════════════ -->
+    <header class="page-header">
+      <div class="page-header-inner">
+        <p class="page-eyebrow">Legal</p>
+        <h1>Terms of Service</h1>
+        <div class="page-meta">
+          <strong>Last updated: March 2026</strong> &nbsp;&middot;&nbsp;
+          GuestKey is operated by Big Toy Stays LLC, Wisconsin, United States
+        </div>
+        <div class="legal-notice">
+          <svg class="legal-notice-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="10" cy="10" r="8.5" />
+            <path d="M10 9v5M10 6.5v.01" />
+          </svg>
+          <p>These terms are provided as a framework and should be reviewed by qualified legal counsel before relying on them for your specific circumstances.</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- ═══ TABLE OF CONTENTS ════════════════════════════════════════════ -->
+    <section class="toc-section">
+      <div class="toc-inner">
+        <p class="toc-label">Contents</p>
+        <nav class="toc-grid" aria-label="Table of contents">
+          <a href="#s1"><span class="toc-num">1</span>Introduction &amp; Acceptance</a>
+          <a href="#s2"><span class="toc-num">2</span>Service Description</a>
+          <a href="#s3"><span class="toc-num">3</span>Host Responsibilities</a>
+          <a href="#s4"><span class="toc-num">4</span>Guest Responsibilities</a>
+          <a href="#s5"><span class="toc-num">5</span>Security Deposits</a>
+          <a href="#s6"><span class="toc-num">6</span>Smart Home &amp; Device Access</a>
+          <a href="#s7"><span class="toc-num">7</span>Data Ownership &amp; Processing</a>
+          <a href="#s8"><span class="toc-num">8</span>Noise Monitoring</a>
+          <a href="#s9"><span class="toc-num">9</span>Intellectual Property</a>
+          <a href="#s10"><span class="toc-num">10</span>Acceptable Use</a>
+          <a href="#s11"><span class="toc-num">11</span>Availability &amp; Support</a>
+          <a href="#s12"><span class="toc-num">12</span>Limitation of Liability</a>
+          <a href="#s13"><span class="toc-num">13</span>Indemnification</a>
+          <a href="#s14"><span class="toc-num">14</span>Termination</a>
+          <a href="#s15"><span class="toc-num">15</span>Dispute Resolution</a>
+          <a href="#s16"><span class="toc-num">16</span>Changes to Terms</a>
+          <a href="#s17"><span class="toc-num">17</span>Contact</a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ═══ CONTENT ══════════════════════════════════════════════════════ -->
+    <main class="content-body">
+      <div class="content-inner">
+
+        <!-- 1. Introduction & Acceptance -->
+        <section class="tos-section" id="s1">
+          <div class="section-heading">
+            <span class="section-num">01</span>
+            <h2>Introduction &amp; Acceptance</h2>
+          </div>
+          <p>Welcome to GuestKey. These Terms of Service ("<strong>Terms</strong>") govern your access to and use of the GuestKey platform, including our web application, guest portal, admin dashboard, and related services (collectively, the "<strong>Service</strong>"), operated by Big Toy Stays LLC ("<strong>BTS</strong>," "<strong>GuestKey</strong>," "<strong>we</strong>," "<strong>us</strong>," or "<strong>our</strong>").</p>
+          <p>By creating an account, accessing the Service, or completing a guest registration, you confirm that you have read, understood, and agree to be bound by these Terms. If you do not agree, you must not use the Service.</p>
+          <p>The Service is used by two distinct types of users:</p>
+          <ul>
+            <li><strong>Hosts</strong> — property owners, managers, and management companies who create and manage GuestKey accounts for their short-term rental properties.</li>
+            <li><strong>Guests</strong> — travelers who complete the guest registration process as directed by a Host in connection with a property stay.</li>
+          </ul>
+          <p>Certain provisions of these Terms apply specifically to Hosts, others to Guests, and some to both. Where a provision is role-specific, it will be noted clearly.</p>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 2. Service Description -->
+        <section class="tos-section" id="s2">
+          <div class="section-heading">
+            <span class="section-num">02</span>
+            <h2>Service Description</h2>
+          </div>
+          <p>GuestKey is a guest experience platform designed for vacation rental hosts. The Service provides:</p>
+          <ul>
+            <li><strong>Guest registration and identity verification</strong> — Collecting verified contact information from all adult guests via one-time passcode (OTP) verification, not just the primary booker.</li>
+            <li><strong>Security deposit collection and management</strong> — Facilitating the collection and release of security deposits through the Host's own connected payment account.</li>
+            <li><strong>Smart home device control</strong> — Integration with door locks, thermostats, and other connected devices to provide time-limited access during authorized stay periods.</li>
+            <li><strong>Digital guidebook</strong> — A hosted, mobile-friendly property guide including house rules, check-in instructions, local recommendations, and other host-curated content.</li>
+            <li><strong>Noise monitoring integration</strong> — Connecting with third-party noise monitoring platforms and surfacing noise level data in the guest portal.</li>
+            <li><strong>Automated multi-channel guest messaging</strong> — Scheduled and triggered communications to guests across SMS and other configured channels.</li>
+            <li><strong>Admin dashboard</strong> — A web-based interface for Hosts to manage properties, guests, registrations, deposits, and device integrations.</li>
+            <li><strong>Compliance tools</strong> — Features to assist Hosts in meeting local guest registration and lodging ordinance requirements.</li>
+          </ul>
+          <p>The Service is accessed through a web browser and requires no app download for guests. Features available to any given Host may vary based on the Host's plan and connected third-party integrations.</p>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 3. Host Responsibilities -->
+        <section class="tos-section" id="s3">
+          <div class="section-heading">
+            <span class="section-num">03</span>
+            <h2>Host Responsibilities</h2>
+          </div>
+          <p>By using GuestKey as a Host, you acknowledge and agree to the following:</p>
+          <ul>
+            <li><strong>Accuracy of property information.</strong> You are solely responsible for the accuracy, completeness, and legality of all property information, house rules, and content you publish through the Service.</li>
+            <li><strong>Data controller obligations.</strong> You are the data controller for your guests' personal information collected via GuestKey. GuestKey acts as a data processor on your behalf. You are responsible for having a lawful basis to collect and process guest data, providing appropriate privacy notices to guests, and complying with all applicable data protection laws.</li>
+            <li><strong>Legal compliance.</strong> You must comply with all applicable federal, state, and local laws governing short-term rentals, lodging, guest registration requirements, and data privacy. GuestKey provides tools to assist with compliance but does not guarantee compliance on your behalf.</li>
+            <li><strong>Data retention configuration.</strong> You are responsible for configuring appropriate data retention policies for your account in accordance with your legal obligations and the terms of any applicable regulations.</li>
+            <li><strong>Third-party account responsibility.</strong> GuestKey enables you to connect your own third-party accounts (payment processors, property management systems, smart home platforms, etc.). You are responsible for complying with the terms of service of each third-party provider, and GuestKey is not liable for the actions, failures, or terms of those third parties.</li>
+            <li><strong>Proportionate data collection.</strong> You must not configure GuestKey to collect data from guests that goes beyond what is reasonably necessary for guest registration, property management, access control, and related legitimate purposes.</li>
+            <li><strong>Account security.</strong> You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account.</li>
+          </ul>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 4. Guest Responsibilities -->
+        <section class="tos-section" id="s4">
+          <div class="section-heading">
+            <span class="section-num">04</span>
+            <h2>Guest Responsibilities</h2>
+          </div>
+          <p>By completing the guest registration process, Guests agree to the following:</p>
+          <ul>
+            <li><strong>Truthful information.</strong> You must provide accurate, complete, and truthful information during registration. Submitting false or misleading information — including names, contact details, or identification — is a violation of these Terms and may be a violation of applicable law.</li>
+            <li><strong>Unique contact information.</strong> Each individual guest must use their own unique contact information. Contact details may not be shared across multiple guests, and previously used contact information from a different individual may not be reused for your registration.</li>
+            <li><strong>House rules.</strong> You must comply with the property's house rules as displayed in the digital guidebook and as communicated by the Host. GuestKey serves as the delivery mechanism for this information, but the rules are set by the Host.</li>
+            <li><strong>Registration requirements.</strong> You must not attempt to circumvent, bypass, or fraudulently complete registration requirements, including identity verification steps.</li>
+            <li><strong>Smart home access.</strong> Door codes, lock access, thermostat controls, and any other smart home features provided through GuestKey are intended solely for your convenience during your authorized stay period. You must not share access codes with unauthorized individuals or attempt to use, extend, or maintain access beyond the dates of your authorized stay.</li>
+          </ul>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 5. Security Deposits -->
+        <section class="tos-section" id="s5">
+          <div class="section-heading">
+            <span class="section-num">05</span>
+            <h2>Security Deposits</h2>
+          </div>
+          <div class="callout callout-info">
+            <strong>Important:</strong> GuestKey does not hold, control, or have access to deposit funds. All deposit transactions occur between you and the Host, processed through the Host's own payment account.
+          </div>
+          <ul>
+            <li><strong>Host-owned payment processing.</strong> Security deposits collected via GuestKey are processed through the Host's own connected payment processor account. GuestKey facilitates the deposit workflow — presenting the deposit request, capturing authorization, and triggering releases — but is not a party to the financial transaction between Host and Guest.</li>
+            <li><strong>Deposit terms set by Host.</strong> The deposit amount, any required documentation, the conditions under which deductions may be made, and the timeline for refund are determined solely by the Host. GuestKey does not set, modify, or adjudicate these terms.</li>
+            <li><strong>Refunds and deductions.</strong> Refund timelines and any damage deductions are at the Host's sole discretion. Disputes regarding deposits must be resolved directly between the Guest and Host. GuestKey is not an intermediary or arbitrator for deposit disputes.</li>
+            <li><strong>Third-party payment terms.</strong> All payment processing is subject to the terms of service of the Host's payment processor. By authorizing a deposit through GuestKey, you also agree to those terms.</li>
+            <li><strong>No GuestKey liability.</strong> GuestKey is not responsible for any deposit disputes, unauthorized charges, refund delays, or issues arising from the Host's payment processor account or the Host's exercise of their discretion over deposit funds.</li>
+          </ul>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 6. Smart Home & Device Access -->
+        <section class="tos-section" id="s6">
+          <div class="section-heading">
+            <span class="section-num">06</span>
+            <h2>Smart Home &amp; Device Access</h2>
+          </div>
+          <ul>
+            <li><strong>Access is time-limited.</strong> Smart home access — including door lock codes, digital keys, and thermostat controls — is provided only during the authorized stay period associated with your registration. Access may be activated upon completion of registration and any required deposits, at the Host's configuration.</li>
+            <li><strong>Access conditions.</strong> The Host may configure smart home access to be contingent on completing registration, paying a security deposit, or meeting other requirements. GuestKey will reflect these conditions in the guest portal.</li>
+            <li><strong>No guarantee of device functionality.</strong> Smart home features depend on third-party device platforms, internet connectivity, power availability, and hardware function. GuestKey is not liable for device malfunctions, connectivity outages, third-party platform failures, or any inability to access a property resulting from device issues.</li>
+            <li><strong>Host right to revoke access.</strong> Hosts may revoke smart home access at any time for safety, security, or policy reasons. GuestKey will execute the revocation upon the Host's instruction.</li>
+            <li><strong>Guest obligations.</strong> Guests must not share access codes or credentials with unauthorized parties, must not attempt to maintain access beyond the authorized stay period, and must not attempt to manipulate, circumvent, or exploit smart home integrations.</li>
+            <li><strong>Third-party device terms.</strong> The underlying devices and platforms are subject to the terms of service of their respective manufacturers and software providers. GuestKey does not control and is not responsible for those terms or the behavior of those systems.</li>
+          </ul>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 7. Data Ownership & Processing -->
+        <section class="tos-section" id="s7">
+          <div class="section-heading">
+            <span class="section-num">07</span>
+            <h2>Data Ownership &amp; Processing</h2>
+          </div>
+          <p>GuestKey is designed with clear data ownership principles. Here is how data is treated:</p>
+          <ul>
+            <li><strong>Host account data.</strong> Hosts own their account configurations, property settings, guidebook content, and operational data. This data is not sold, shared with other Hosts, or used to train AI models without explicit consent.</li>
+            <li><strong>Guest registration data.</strong> Guest personal information collected via GuestKey (name, contact details, verification status, etc.) is collected on behalf of the Host. The Host is the data controller; GuestKey is the data processor. GuestKey processes this data only as directed by the Host and as described in our <a href="/privacy.html">Privacy Policy</a>.</li>
+            <li><strong>Data export.</strong> Hosts may export all guest registration data at any time in standard formats (CSV, JSON) through the admin dashboard.</li>
+            <li><strong>Guest data deletion.</strong> Hosts may delete individual guest records or all guest data at any time. Guests may request deletion of their personal data directly through the Host or by contacting GuestKey at <a href="mailto:legal@guestkey.co">legal@guestkey.co</a>. Deletion requests are processed in accordance with applicable law and the Host's data retention policies.</li>
+            <li><strong>Data retention.</strong> Hosts configure their own data retention periods through the admin dashboard. The default retention period is for the duration of the Host's active account plus 30 days following account termination. Hosts may set shorter or longer periods subject to their legal obligations.</li>
+            <li><strong>Data processing agreement.</strong> GuestKey processes guest data on behalf of Hosts in accordance with our Privacy Policy and applicable data protection laws. For Hosts subject to GDPR, CCPA, or similar regulations, our processing activities are governed by a Data Processing Agreement available upon request.</li>
+          </ul>
+          <p>For complete details on how data is collected, used, stored, and protected, please see our <a href="/privacy.html">Privacy Policy at guestkey.co/privacy</a>.</p>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 8. Noise Monitoring -->
+        <section class="tos-section" id="s8">
+          <div class="section-heading">
+            <span class="section-num">08</span>
+            <h2>Noise Monitoring</h2>
+          </div>
+          <ul>
+            <li><strong>Third-party integration.</strong> GuestKey integrates with third-party noise monitoring platforms to enhance the service available to Hosts and Guests. The functionality, data, and behavior of these integrations are controlled by those third-party platforms.</li>
+            <li><strong>Guest contact sharing.</strong> When a Host has configured noise monitoring, GuestKey may share the contact information of registered adult guests with the noise monitoring platform. This enables all registered adults to receive noise alerts directly — not just the primary booker — which is the purpose for which this data is shared.</li>
+            <li><strong>Informational purpose.</strong> Noise level data displayed in the guest portal is provided for informational and awareness purposes only. It does not constitute a binding record of noise violations or a guarantee of accuracy.</li>
+            <li><strong>No GuestKey liability for noise data.</strong> GuestKey is not responsible for the accuracy, reliability, or completeness of noise monitoring data provided by third-party platforms, nor for any actions taken by noise monitoring platforms or by Hosts based on that data.</li>
+          </ul>
+          <div class="callout callout-info">
+            By completing registration at a property with noise monitoring enabled, Guests acknowledge that their contact information may be shared with the Host's noise monitoring provider for the purpose of receiving noise alerts during their stay.
+          </div>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 9. Intellectual Property -->
+        <section class="tos-section" id="s9">
+          <div class="section-heading">
+            <span class="section-num">09</span>
+            <h2>Intellectual Property</h2>
+          </div>
+          <ul>
+            <li><strong>GuestKey platform.</strong> The GuestKey platform — including its software, design, features, functionality, trademarks, and content created by GuestKey — is owned by Big Toy Stays LLC and is protected by applicable intellectual property laws. You may not copy, modify, distribute, sell, or create derivative works from the platform without our express written permission.</li>
+            <li><strong>Host content.</strong> Hosts retain full ownership of the content they create and upload through GuestKey, including guidebook text, property images, house rules, and other Host-authored materials. By uploading content, Hosts grant GuestKey a limited, non-exclusive license to store, display, and transmit that content as necessary to provide the Service.</li>
+            <li><strong>Guest rights.</strong> Guests are granted a limited, non-transferable right to access the guest portal and use the features provided during their authorized stay period. This right does not extend to any ownership of or ongoing rights to the platform, its content, or any Host-created content beyond the stay period.</li>
+            <li><strong>Feedback.</strong> If you submit feedback, suggestions, or ideas regarding the Service, you grant GuestKey a royalty-free, irrevocable right to use and incorporate that feedback without compensation or attribution.</li>
+          </ul>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 10. Acceptable Use -->
+        <section class="tos-section" id="s10">
+          <div class="section-heading">
+            <span class="section-num">10</span>
+            <h2>Acceptable Use</h2>
+          </div>
+          <p>Users of GuestKey — both Hosts and Guests — must not:</p>
+          <ul>
+            <li>Use the Service for any unlawful purpose or in violation of any applicable federal, state, or local laws or regulations.</li>
+            <li>Submit false, misleading, fraudulent, or impersonating information at any point during registration or account setup.</li>
+            <li>Attempt to gain unauthorized access to any part of the Service, any other user's account, or any systems or networks connected to the Service.</li>
+            <li>Interfere with or disrupt the integrity or performance of the Service, its servers, or its underlying infrastructure.</li>
+            <li>Use the Service to harass, stalk, threaten, or otherwise harm any other person.</li>
+            <li>Reverse engineer, decompile, disassemble, or otherwise attempt to extract source code, algorithms, or underlying intellectual property from the Service.</li>
+            <li>Use automated systems, bots, scrapers, or similar tools to access or extract data from the Service without our express written permission.</li>
+            <li>Share your account credentials or access tokens with unauthorized parties.</li>
+            <li>Use the Service to collect data in a manner that violates applicable privacy laws or goes beyond the stated purpose of guest registration and property management.</li>
+            <li>Circumvent, disable, or interfere with any security features of the Service or connected smart home devices.</li>
+          </ul>
+          <p>We reserve the right to investigate and take appropriate action against any user who, in our sole discretion, violates these provisions — including suspending or terminating accounts, reporting to law enforcement, and pursuing legal remedies.</p>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 11. Availability & Support -->
+        <section class="tos-section" id="s11">
+          <div class="section-heading">
+            <span class="section-num">11</span>
+            <h2>Availability &amp; Support</h2>
+          </div>
+          <ul>
+            <li><strong>Uptime.</strong> GuestKey aims to maintain high availability of the Service but does not guarantee any specific uptime percentage. The Service may be unavailable due to scheduled maintenance, unplanned outages, or circumstances beyond our control.</li>
+            <li><strong>No liability for interruptions.</strong> We are not liable for any losses, damages, or costs incurred as a result of Service unavailability, interruptions, or degraded performance, including any impact on guest check-ins or smart home access.</li>
+            <li><strong>Third-party dependencies.</strong> Many GuestKey features depend on third-party services (smart home platforms, payment processors, noise monitoring providers, property management systems). The availability and reliability of these features is subject to the uptime and performance of those third parties, for which GuestKey is not responsible.</li>
+            <li><strong>Support.</strong> Customer support for Hosts is provided via email at <a href="mailto:legal@guestkey.co">legal@guestkey.co</a> during standard business hours. We do not offer guaranteed response time commitments unless specified in a separate written agreement. Guests with registration issues should first contact their Host; GuestKey support is available as a secondary resource.</li>
+          </ul>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 12. Limitation of Liability -->
+        <section class="tos-section" id="s12">
+          <div class="section-heading">
+            <span class="section-num">12</span>
+            <h2>Limitation of Liability</h2>
+          </div>
+          <div class="callout callout-warn">
+            <strong>Please read this section carefully.</strong> It limits GuestKey's legal liability to you.
+          </div>
+          <p>The Service is provided "as is" and "as available" without warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</p>
+          <p>To the fullest extent permitted by applicable law, GuestKey and its officers, employees, agents, partners, and licensors shall not be liable for any of the following, even if we have been advised of the possibility of such damages:</p>
+          <ul>
+            <li>Property damage or theft occurring during or after a guest's stay</li>
+            <li>Unauthorized access to a property resulting from device malfunction, connectivity failure, or third-party service outage</li>
+            <li>Smart home device malfunctions, failed lock operations, or thermostat errors</li>
+            <li>Inaccuracies in noise monitoring data or actions taken based on that data</li>
+            <li>Deposit disputes, refund delays, or financial losses arising from the Host's management of deposits</li>
+            <li>Failures, outages, or security incidents involving third-party platforms integrated with GuestKey</li>
+            <li>Any indirect, incidental, special, exemplary, consequential, or punitive damages</li>
+            <li>Loss of profits, revenue, data, goodwill, or other intangible losses</li>
+          </ul>
+          <p>In any case, GuestKey's total aggregate liability to any Host for all claims arising under or related to these Terms shall not exceed the total fees paid by that Host to GuestKey in the twelve (12) months immediately preceding the event giving rise to the claim. GuestKey's total aggregate liability to any Guest shall not exceed fifty dollars (USD $50.00).</p>
+          <p>Some jurisdictions do not allow the exclusion of certain warranties or the limitation of liability for certain damages. In such jurisdictions, our liability is limited to the fullest extent permitted by law.</p>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 13. Indemnification -->
+        <section class="tos-section" id="s13">
+          <div class="section-heading">
+            <span class="section-num">13</span>
+            <h2>Indemnification</h2>
+          </div>
+          <p><strong>Hosts</strong> agree to defend, indemnify, and hold harmless GuestKey and its officers, directors, employees, contractors, agents, successors, and assigns from and against any and all claims, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or relating to:</p>
+          <ul>
+            <li>Your use of the Service or your guests' use of the Service in connection with your properties</li>
+            <li>Your guests' actions, conduct, or presence at your property</li>
+            <li>Your violation of these Terms or any applicable law or regulation</li>
+            <li>Your property content, configurations, or instructions to guests</li>
+            <li>Any claim by a Guest or third party arising from your deposit terms, house rules, or exercise of discretion over guest data</li>
+          </ul>
+          <p><strong>Guests</strong> agree to defend, indemnify, and hold harmless GuestKey and its officers, directors, employees, contractors, agents, successors, and assigns from and against any claims, damages, losses, costs, and expenses arising out of or relating to:</p>
+          <ul>
+            <li>False, fraudulent, or inaccurate information provided during registration</li>
+            <li>Misuse of smart home controls, access codes, or device integrations</li>
+            <li>Your violation of property house rules or these Terms</li>
+            <li>Any damage to the property or harm to others caused by you or individuals you brought to the property</li>
+          </ul>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 14. Termination -->
+        <section class="tos-section" id="s14">
+          <div class="section-heading">
+            <span class="section-num">14</span>
+            <h2>Termination</h2>
+          </div>
+          <ul>
+            <li><strong>Termination by Host.</strong> Hosts may terminate their GuestKey account at any time by contacting us or through the account settings. Upon termination, your access to the admin dashboard will be revoked, smart home integrations will be disconnected, and guest data associated with your account will be deleted within 30 days. Any pending deposit authorizations or releases will be processed according to your payment processor's account terms — GuestKey is not responsible for handling funds after account termination.</li>
+            <li><strong>Termination by Guest.</strong> Guest access is time-limited by nature and expires at the end of the authorized stay period. Guests may request deletion of their data at any time by contacting us or the Host directly.</li>
+            <li><strong>Termination by GuestKey.</strong> GuestKey reserves the right to suspend or terminate any account — Host or Guest — at any time and without prior notice for violations of these Terms, suspected fraud or illegal activity, actions that threaten the security or integrity of the Service, or any other reason at our sole discretion. We will make reasonable efforts to notify Hosts of termination unless doing so would compromise a security investigation.</li>
+            <li><strong>Effect of termination.</strong> Upon termination, all licenses and rights granted to you under these Terms immediately cease. Provisions of these Terms that by their nature should survive termination will survive, including Sections 9 (Intellectual Property), 12 (Limitation of Liability), 13 (Indemnification), and 15 (Dispute Resolution).</li>
+          </ul>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 15. Dispute Resolution -->
+        <section class="tos-section" id="s15">
+          <div class="section-heading">
+            <span class="section-num">15</span>
+            <h2>Dispute Resolution</h2>
+          </div>
+          <div class="callout callout-warn">
+            <strong>Please read this section carefully.</strong> It affects your rights regarding how disputes with GuestKey are resolved, including a waiver of the right to a jury trial and class action.
+          </div>
+          <ul>
+            <li><strong>Informal resolution first.</strong> Before initiating any formal dispute proceeding, you agree to first contact GuestKey at <a href="mailto:legal@guestkey.co">legal@guestkey.co</a> and give us a reasonable opportunity — at least 30 days — to resolve the dispute informally.</li>
+            <li><strong>Binding arbitration.</strong> If informal resolution fails, disputes arising out of or relating to these Terms or your use of the Service shall be resolved by binding arbitration administered by a recognized arbitration body under its then-current rules. Arbitration shall take place in Wisconsin, United States. The arbitrator's decision shall be final and binding and may be entered as a judgment in any court of competent jurisdiction.</li>
+            <li><strong>Class action waiver.</strong> You agree that any dispute resolution proceeding will be conducted solely on an individual basis and not as a class, consolidated, or representative action. You waive any right to participate in a class action lawsuit or class-wide arbitration against GuestKey.</li>
+            <li><strong>Small claims exception.</strong> Notwithstanding the foregoing, either party may bring an individual action in small claims court for disputes that fall within that court's jurisdiction, provided the action remains in small claims court and is not removed or appealed to a court of general jurisdiction.</li>
+            <li><strong>Governing law.</strong> These Terms are governed by and construed in accordance with the laws of the State of Wisconsin, United States, without regard to conflict of law principles.</li>
+            <li><strong>Jurisdiction.</strong> For any matters not subject to arbitration, each party consents to the exclusive jurisdiction and venue of the state and federal courts located in Wisconsin, United States.</li>
+          </ul>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 16. Changes to Terms -->
+        <section class="tos-section" id="s16">
+          <div class="section-heading">
+            <span class="section-num">16</span>
+            <h2>Changes to Terms</h2>
+          </div>
+          <ul>
+            <li><strong>Right to update.</strong> GuestKey reserves the right to modify these Terms at any time. We will update the "Last updated" date at the top of this page when changes are made.</li>
+            <li><strong>Material changes — Host notice.</strong> For material changes that significantly affect Host rights or obligations, we will provide at least 30 days' advance notice via email to the address associated with your Host account. "Material changes" include, but are not limited to, changes to payment terms, data processing obligations, or dispute resolution procedures.</li>
+            <li><strong>Minor changes.</strong> Non-material updates (such as clarifications, corrections, or new feature descriptions) may take effect immediately without advance notice.</li>
+            <li><strong>Continued use as acceptance.</strong> Your continued use of the Service after any updated Terms take effect constitutes your acceptance of the revised Terms. If you do not agree with the revised Terms, you must stop using the Service and may terminate your account.</li>
+            <li><strong>Guest notice.</strong> Because Guests interact with the Service on a per-stay basis, Guests are subject to the version of these Terms in effect at the time of their registration. We recommend checking this page periodically.</li>
+          </ul>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 17. Contact -->
+        <section class="tos-section" id="s17">
+          <div class="section-heading">
+            <span class="section-num">17</span>
+            <h2>Contact</h2>
+          </div>
+          <p>If you have questions about these Terms, wish to exercise your data rights, or need to report a violation, please contact us:</p>
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2.5 5.5a2 2 0 012-2h11a2 2 0 012 2v9a2 2 0 01-2 2h-11a2 2 0 01-2-2v-9z" />
+                <path d="M2.5 5.5l7.5 5.5 7.5-5.5" />
+              </svg>
+            </div>
+            <div class="contact-card-text">
+              <p>Legal inquiries, data requests, and Terms questions</p>
+              <a href="mailto:legal@guestkey.co">legal@guestkey.co</a>
+            </div>
+          </div>
+          <p style="margin-top: 20px;">
+            <strong>Big Toy Stays LLC</strong><br />
+            <span style="color: var(--text-muted); font-size: 0.9rem;">Wisconsin, United States</span>
+          </p>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- ═══ FOOTER ════════════════════════════════════════════════════════ -->
+    <footer class="landing-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <span style="color:var(--accent);font-size:1.4rem;line-height:1;">&#9670;</span>
+            <span style="font-weight:700;font-size:1.35rem;color:var(--text-on-dark);letter-spacing:-0.02em;">GuestKey</span>
+          </div>
+          <p>Guest experience platform for<br />vacation rental hosts.</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h5>Product</h5>
+            <a href="/#features">Features</a>
+            <a href="/#how-it-works">How It Works</a>
+            <a href="/#pricing">Pricing</a>
+            <a href="https://rega.guestkey.co/ap/5555555?stay=1" target="_blank" rel="noopener">Live Demo</a>
+          </div>
+          <div>
+            <h5>Company</h5>
+            <a href="/">Home</a>
+            <a href="mailto:legal@guestkey.co">Contact</a>
+          </div>
+          <div>
+            <h5>Legal</h5>
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/terms.html" style="color:var(--text-on-dark);">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 GuestKey &mdash; Big Toy Stays LLC. All rights reserved.</p>
+      </div>
+    </footer>
+
+  </div><!-- /.page-wrapper -->
+
+</body>
+</html>

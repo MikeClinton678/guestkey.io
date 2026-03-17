@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — GuestKey</title>
+  <meta name="description" content="GuestKey Privacy Policy — How Big Toy Stays LLC collects, uses, and protects data on the GuestKey guest experience platform." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%230B1120'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='18' fill='%2306B6D4'%3E%E2%97%86%3C/text%3E%3C/svg%3E" type="image/svg+xml" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ═══════════════════════════════════════════════════════════════════════════
+       GuestKey Privacy Policy — matching main site aesthetic
+       ═══════════════════════════════════════════════════════════════════════════ */
+
+    :root {
+      --bg-dark: #0B1120;
+      --bg-dark-raised: #111827;
+      --bg-dark-card: #1E293B;
+      --bg-light: #F8FAFC;
+      --text-on-dark: #F1F5F9;
+      --text-on-dark-muted: #94A3B8;
+      --text-dark: #0F172A;
+      --text-muted: #64748B;
+      --text-light: #94A3B8;
+      --accent: #06B6D4;
+      --accent-bright: #22D3EE;
+      --accent-deep: #0891B2;
+      --accent-muted: rgba(6, 182, 212, 0.12);
+      --border-dark: rgba(148, 163, 184, 0.12);
+      --border-light: #E2E8F0;
+      --radius: 8px;
+      --radius-lg: 16px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-dark);
+      background: var(--bg-light);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    a:hover { color: var(--accent-bright); }
+
+    /* ─── Navigation ──────────────────────────────────────────────────────── */
+    .landing-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(11, 17, 32, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .nav-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      color: var(--accent);
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    .brand-text {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: var(--text-on-dark);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-back {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-on-dark-muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--accent-bright); }
+
+    .nav-back svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    /* ─── Page Hero / Banner ─────────────────────────────────────────────── */
+    .policy-hero {
+      background: var(--bg-dark);
+      padding: 120px 32px 56px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .policy-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 300px;
+      background: radial-gradient(ellipse at center, rgba(6, 182, 212, 0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .policy-hero-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .policy-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .policy-hero h1 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: var(--text-on-dark);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .policy-meta {
+      font-size: 0.9rem;
+      color: var(--text-on-dark-muted);
+      line-height: 1.6;
+    }
+
+    .policy-meta strong {
+      color: var(--text-on-dark);
+      font-weight: 600;
+    }
+
+    /* ─── Legal Notice Banner ────────────────────────────────────────────── */
+    .legal-notice {
+      background: rgba(6, 182, 212, 0.08);
+      border-left: 3px solid var(--accent);
+      padding: 14px 18px;
+      margin-top: 24px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    .legal-notice p {
+      font-size: 0.82rem;
+      color: var(--text-on-dark-muted);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .legal-notice strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* ─── TOC ───────────────────────────────────────────────────────────── */
+    .toc-bar {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-light);
+      padding: 0 32px;
+      position: sticky;
+      top: 65px;
+      z-index: 90;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .toc-bar::-webkit-scrollbar { display: none; }
+
+    .toc-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      gap: 0;
+      padding: 0;
+      white-space: nowrap;
+    }
+
+    .toc-inner a {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      padding: 14px 14px;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+      flex-shrink: 0;
+    }
+    .toc-inner a:hover {
+      color: var(--accent-deep);
+      border-bottom-color: var(--accent);
+    }
+
+    /* ─── Main Content ───────────────────────────────────────────────────── */
+    .policy-body {
+      background: var(--bg-light);
+      padding: 64px 32px 80px;
+    }
+
+    .policy-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* ─── Sections ───────────────────────────────────────────────────────── */
+    .policy-section {
+      margin-bottom: 56px;
+      scroll-margin-top: 120px;
+    }
+
+    .section-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--accent-muted);
+      border-radius: 50%;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent-deep);
+      margin-right: 10px;
+      flex-shrink: 0;
+      vertical-align: middle;
+    }
+
+    .policy-section h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .policy-section p {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+    .policy-section p:last-child { margin-bottom: 0; }
+
+    .policy-section ul,
+    .policy-section ol {
+      margin: 12px 0 14px 0;
+      padding-left: 20px;
+    }
+
+    .policy-section li {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .policy-section li:last-child { margin-bottom: 0; }
+
+    .policy-section strong {
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    /* ─── Info Cards ─────────────────────────────────────────────────────── */
+    .info-card {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      margin: 20px 0;
+    }
+
+    .info-card h3 {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .info-card h3 .card-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .info-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .info-card ul li {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      padding: 5px 0;
+      padding-left: 16px;
+      position: relative;
+      line-height: 1.6;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .info-card ul li:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .info-card ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 13px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .info-card ul li strong {
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    /* Two-column card grid */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 20px 0;
+    }
+
+    /* ─── Highlight Box ──────────────────────────────────────────────────── */
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.06), rgba(6, 182, 212, 0.03));
+      border: 1px solid rgba(6, 182, 212, 0.2);
+      border-radius: var(--radius-lg);
+      padding: 22px 26px;
+      margin: 20px 0;
+    }
+
+    .highlight-box p {
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      line-height: 1.7;
+      margin: 0;
+      font-weight: 500;
+    }
+
+    .highlight-box p strong {
+      color: var(--accent-deep);
+    }
+
+    /* ─── No-Sell Banner ─────────────────────────────────────────────────── */
+    .no-sell-banner {
+      background: var(--bg-dark);
+      border-radius: var(--radius-lg);
+      padding: 22px 26px;
+      margin: 24px 0;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .no-sell-icon {
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+
+    .no-sell-banner p {
+      font-size: 0.9rem;
+      color: var(--text-on-dark-muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .no-sell-banner p strong {
+      color: var(--text-on-dark);
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    /* ─── Rights Table ───────────────────────────────────────────────────── */
+    .rights-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    .right-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 14px 18px;
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+    }
+
+    .right-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent-deep);
+      background: var(--accent-muted);
+      padding: 3px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      align-self: flex-start;
+      margin-top: 2px;
+    }
+
+    .right-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ─── Contact CTA ────────────────────────────────────────────────────── */
+    .contact-block {
+      background: var(--bg-dark);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      margin-top: 24px;
+      text-align: center;
+    }
+
+    .contact-block h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-on-dark);
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .contact-block p {
+      font-size: 0.9rem;
+      color: var(--text-on-dark-muted);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .contact-block .contact-email {
+      display: inline-block;
+      background: var(--accent-muted);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      color: var(--accent-bright);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .contact-block .contact-email:hover {
+      background: rgba(6, 182, 212, 0.2);
+      color: var(--accent-bright);
+      box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
+    }
+
+    .contact-block .contact-address {
+      margin-top: 16px;
+      font-size: 0.82rem;
+      color: rgba(148, 163, 184, 0.5);
+      line-height: 1.5;
+    }
+
+    /* ─── Divider ────────────────────────────────────────────────────────── */
+    .policy-divider {
+      border: none;
+      border-top: 1px solid var(--border-light);
+      margin: 0 0 56px 0;
+    }
+
+    /* ─── Footer ─────────────────────────────────────────────────────────── */
+    .landing-footer {
+      background: var(--bg-dark);
+      padding: 64px 32px 0;
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 64px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .footer-brand p {
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: var(--text-on-dark-muted);
+      line-height: 1.6;
+    }
+
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .footer-links h5 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-on-dark-muted);
+      margin-bottom: 16px;
+    }
+
+    .footer-links a {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--text-light);
+      padding: 4px 0;
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+    .footer-links a:hover { color: var(--text-on-dark); }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    .footer-bottom p {
+      font-size: 0.78rem;
+      color: rgba(148, 163, 184, 0.3);
+    }
+
+    /* ─── Responsive ─────────────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav-inner { padding: 14px 20px; }
+
+      .policy-hero { padding: 100px 20px 44px; }
+      .policy-hero h1 { font-size: 1.9rem; }
+
+      .toc-bar { display: none; }
+
+      .policy-body { padding: 44px 20px 64px; }
+
+      .card-grid { grid-template-columns: 1fr; }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+
+      .landing-footer { padding: 48px 20px 0; }
+
+      .contact-block { padding: 28px 20px; }
+
+      .no-sell-banner { flex-direction: column; gap: 10px; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .footer-links { grid-template-columns: 1fr; }
+      .brand-text { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       NAVIGATION
+       ═══════════════════════════════════════════════════════════════════ -->
+  <nav class="landing-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand" aria-label="GuestKey Home">
+        <span class="brand-mark">&#9670;</span>
+        <span class="brand-text">GuestKey</span>
+      </a>
+      <a href="/" class="nav-back">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+        Back to Home
+      </a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       PAGE HERO
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="policy-hero">
+    <div class="policy-hero-inner">
+      <p class="policy-eyebrow">Legal &amp; Privacy</p>
+      <h1>Privacy Policy</h1>
+      <p class="policy-meta">
+        <strong>Last updated: March 2026</strong><br />
+        Operated by Big Toy Stays LLC (&ldquo;BTS&rdquo;), doing business as GuestKey &mdash; Wisconsin, United States.<br />
+        Questions? Email <a href="mailto:privacy@guestkey.co">privacy@guestkey.co</a>
+      </p>
+      <div class="legal-notice">
+        <p><strong>Note to hosts:</strong> This policy covers GuestKey&rsquo;s practices as a platform operator. We recommend having this policy (and any supplemental notice for your guests) reviewed by qualified legal counsel, particularly if you serve guests in regulated jurisdictions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       TABLE OF CONTENTS (sticky bar)
+       ═══════════════════════════════════════════════════════════════════ -->
+  <nav class="toc-bar" aria-label="Page sections">
+    <div class="toc-inner">
+      <a href="#s1">Who We Are</a>
+      <a href="#s2">Types of Users</a>
+      <a href="#s3">Guest Data</a>
+      <a href="#s4">Host Data</a>
+      <a href="#s5">How We Use Data</a>
+      <a href="#s6">Who We Share With</a>
+      <a href="#s7">Data Controller</a>
+      <a href="#s8">Retention &amp; Control</a>
+      <a href="#s9">Your Rights</a>
+      <a href="#s10">Security</a>
+      <a href="#s11">Cookies</a>
+      <a href="#s12">Children</a>
+      <a href="#s13">CCPA</a>
+      <a href="#s14">International</a>
+      <a href="#s15">Changes</a>
+      <a href="#s16">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       POLICY BODY
+       ═══════════════════════════════════════════════════════════════════ -->
+  <main class="policy-body">
+    <div class="policy-content">
+
+      <!-- 1. Who We Are -->
+      <section class="policy-section" id="s1">
+        <h2><span class="section-number">1</span> Who We Are</h2>
+        <p>GuestKey is a guest experience platform for short-term rental hosts. The platform is owned and operated by <strong>Big Toy Stays LLC</strong> (&ldquo;BTS,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;), a company based in Wisconsin, United States.</p>
+        <p>GuestKey provides vacation rental hosts with tools to manage guest registration, smart home device access, security deposits, digital guidebooks, and noise monitoring. This Privacy Policy explains how we collect, use, and protect personal information in connection with the GuestKey platform.</p>
+        <p>By accessing or using GuestKey&mdash;whether as a host or as a guest completing registration through a host&rsquo;s portal&mdash;you acknowledge the practices described in this policy.</p>
+      </section>
+
+      <!-- 2. Two Types of Users -->
+      <section class="policy-section" id="s2">
+        <h2><span class="section-number">2</span> Two Types of Users</h2>
+        <p>GuestKey serves two distinct groups of people, each with a different relationship to the platform:</p>
+        <div class="card-grid">
+          <div class="info-card">
+            <h3><span class="card-dot"></span> Hosts</h3>
+            <ul>
+              <li>Property owners and property managers</li>
+              <li>Direct customers of GuestKey (account holders)</li>
+              <li>Control their own property configurations</li>
+              <li>Determine what data is collected from their guests</li>
+              <li>Act as the <strong>data controller</strong> for guest data</li>
+            </ul>
+          </div>
+          <div class="info-card">
+            <h3><span class="card-dot"></span> Guests</h3>
+            <ul>
+              <li>Travelers staying at a host&rsquo;s property</li>
+              <li>Complete registration through a host&rsquo;s GuestKey portal</li>
+              <li>Not direct customers of GuestKey</li>
+              <li>Data is collected on behalf of the host</li>
+              <li>Have rights to access, correct, and delete their data</li>
+            </ul>
+          </div>
+        </div>
+        <p>This distinction is important: when you interact with a GuestKey registration portal as a guest, your information is collected on behalf of the host operating that property. GuestKey acts as a <strong>data processor</strong> in that context.</p>
+      </section>
+
+      <!-- 3. Data We Collect from Guests -->
+      <section class="policy-section" id="s3">
+        <h2><span class="section-number">3</span> Data We Collect from Guests</h2>
+        <p>When guests complete a registration form through a host&rsquo;s GuestKey portal, we collect information necessary to verify identity, manage property access, and fulfill the host&rsquo;s requirements.</p>
+
+        <div class="info-card">
+          <h3><span class="card-dot"></span> Registration &amp; Identity</h3>
+          <ul>
+            <li><strong>Full name</strong> &mdash; as provided during registration</li>
+            <li><strong>Mailing address</strong> &mdash; home or billing address</li>
+            <li><strong>Email address</strong> &mdash; verified via one-time passcode (OTP)</li>
+            <li><strong>Phone number</strong> &mdash; verified via one-time passcode (OTP)</li>
+            <li><strong>Check-in and check-out dates</strong> &mdash; from the reservation</li>
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <h3><span class="card-dot"></span> Smart Home &amp; Device Data</h3>
+          <ul>
+            <li><strong>Lock access logs</strong> &mdash; records of door code usage and access times</li>
+            <li><strong>Thermostat interactions</strong> &mdash; adjustments made via the guest portal</li>
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <h3><span class="card-dot"></span> Payment Data</h3>
+          <ul>
+            <li><strong>Security deposit payment information</strong> &mdash; processed through Stripe. We never receive, store, or see full card numbers. All payment data is handled directly by the payment processor.</li>
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <h3><span class="card-dot"></span> Technical &amp; Location Data</h3>
+          <ul>
+            <li><strong>IP address</strong> &mdash; collected at the time of registration</li>
+            <li><strong>Approximate location</strong> &mdash; used to assist with address autocomplete during form entry; not stored as a precise location record</li>
+            <li><strong>Noise monitoring data</strong> &mdash; aggregated, property-level noise readings from the host&rsquo;s monitoring device. This is not individual tracking and does not record audio.</li>
+          </ul>
+        </div>
+
+        <p>OTP verification of email and phone is required. This step ensures that contact information is accurate and actively controlled by the registrant, preventing fake or reused contact details.</p>
+      </section>
+
+      <!-- 4. Data We Collect from Hosts -->
+      <section class="policy-section" id="s4">
+        <h2><span class="section-number">4</span> Data We Collect from Hosts</h2>
+        <p>Hosts create accounts directly with GuestKey. We collect information necessary to provide the platform, process payments, and support host operations.</p>
+
+        <div class="info-card">
+          <h3><span class="card-dot"></span> Account Information</h3>
+          <ul>
+            <li><strong>Name and email address</strong></li>
+            <li><strong>Business name and details</strong> (where provided)</li>
+            <li><strong>Billing and payment information</strong> &mdash; for GuestKey subscription payments, processed via our payment processor</li>
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <h3><span class="card-dot"></span> Property &amp; Configuration Data</h3>
+          <ul>
+            <li><strong>Property details</strong> &mdash; addresses, names, settings configured by the host</li>
+            <li><strong>Smart device configurations</strong> &mdash; device identifiers, access schedules, and preferences</li>
+            <li><strong>API credentials for connected services</strong> &mdash; stored with encryption; never shared with third parties or exposed in plaintext</li>
+            <li><strong>Messaging and automation settings</strong> &mdash; templates, scheduled messages, and notification preferences</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 5. How We Use Data -->
+      <section class="policy-section" id="s5">
+        <h2><span class="section-number">5</span> How We Use Data</h2>
+        <p>We use the data we collect to operate the platform and deliver the services hosts and their guests expect.</p>
+        <ul>
+          <li><strong>Process guest registrations</strong> &mdash; collect, verify, and record guest information on behalf of hosts</li>
+          <li><strong>Verify identity</strong> &mdash; OTP verification ensures each registered contact is legitimate</li>
+          <li><strong>Manage smart home access</strong> &mdash; generate and distribute door codes, apply thermostat schedules, and log device interactions</li>
+          <li><strong>Security deposits</strong> &mdash; collect, hold, and return deposits through the host&rsquo;s connected payment account</li>
+          <li><strong>Automated messaging</strong> &mdash; send OTP codes, registration confirmations, check-in instructions, and host-configured notifications via SMS and email</li>
+          <li><strong>Noise monitoring</strong> &mdash; relay property-level noise data to guests and hosts; distribute noise alert notifications to all registered adult guests (not only the primary booker)</li>
+          <li><strong>Guest registration compliance</strong> &mdash; assist hosts in collecting data required by local short-term rental registration laws</li>
+          <li><strong>Platform improvement</strong> &mdash; aggregate, anonymized analytics to improve performance and reliability</li>
+          <li><strong>Host support</strong> &mdash; respond to support requests and troubleshoot issues</li>
+        </ul>
+        <p>We do not use guest data for advertising, profiling, or any purpose unrelated to the services described above.</p>
+      </section>
+
+      <!-- 6. Who We Share Data With -->
+      <section class="policy-section" id="s6">
+        <h2><span class="section-number">6</span> Who We Share Data With</h2>
+        <p>We share data with third parties only to the extent necessary to deliver the platform. We are specific about our functional partners below.</p>
+
+        <div class="info-card" style="margin-bottom: 16px;">
+          <h3><span class="card-dot"></span> Smart Lock Providers</h3>
+          <ul>
+            <li>We share device identifiers and access schedules to manage door codes for guests</li>
+            <li>Data is limited to what is needed to create, activate, and revoke access codes</li>
+          </ul>
+        </div>
+
+        <div class="info-card" style="margin-bottom: 16px;">
+          <h3><span class="card-dot"></span> Payment Processor (Stripe)</h3>
+          <ul>
+            <li>Guest payment data for security deposit transactions is handled by Stripe, a PCI-compliant payment processor</li>
+            <li>Hosts connect their own Stripe accounts; deposits flow through the host&rsquo;s account, not ours</li>
+            <li>We never store card numbers or raw payment credentials</li>
+          </ul>
+        </div>
+
+        <div class="info-card" style="margin-bottom: 16px;">
+          <h3><span class="card-dot"></span> Messaging Services</h3>
+          <ul>
+            <li>Phone numbers and email addresses are shared with SMS and email delivery providers to send OTP verification codes, registration confirmations, and host-configured notifications</li>
+          </ul>
+        </div>
+
+        <div class="info-card" style="margin-bottom: 16px;">
+          <h3><span class="card-dot"></span> Noise Monitoring Platforms</h3>
+          <ul>
+            <li>Guest names, phone numbers, and stay dates are shared with connected noise monitoring services</li>
+            <li>This enables all registered adult guests (not just the primary booker) to receive noise alerts and be aware of property monitoring during their stay</li>
+            <li>This sharing is host-configured and only occurs when the host has enabled a noise monitoring integration</li>
+          </ul>
+        </div>
+
+        <div class="info-card" style="margin-bottom: 16px;">
+          <h3><span class="card-dot"></span> Property Management Systems (PMS)</h3>
+          <ul>
+            <li>When a host connects their PMS to GuestKey, reservation data and messaging may be exchanged with that system</li>
+            <li>The scope of data sharing is limited to what is necessary for the integration to function</li>
+          </ul>
+        </div>
+
+        <div class="info-card" style="margin-bottom: 24px;">
+          <h3><span class="card-dot"></span> Cloud Infrastructure</h3>
+          <ul>
+            <li>All data is stored on US-based cloud infrastructure providers</li>
+            <li>Data is encrypted at rest and in transit</li>
+            <li>Infrastructure providers have access to data only as necessary to provide hosting services and operate under data processing agreements with us</li>
+          </ul>
+        </div>
+
+        <div class="no-sell-banner">
+          <div class="no-sell-icon">&#128683;</div>
+          <p>
+            <strong>We do not sell guest data. Ever.</strong>
+            GuestKey does not sell, rent, license, or trade personal information to third parties, advertisers, or data brokers. Guest data exists to serve the host&ndash;guest relationship&mdash;nothing more.
+          </p>
+        </div>
+      </section>
+
+      <!-- 7. Host as Data Controller -->
+      <section class="policy-section" id="s7">
+        <h2><span class="section-number">7</span> Host as Data Controller</h2>
+        <p>Under applicable data protection frameworks, when it comes to guest data collected through a host&rsquo;s GuestKey portal:</p>
+        <ul>
+          <li><strong>The host is the data controller.</strong> Hosts determine the purpose for which guest data is collected (e.g., compliance with local registration laws, property access, security deposit management) and the rules that govern it.</li>
+          <li><strong>GuestKey is the data processor.</strong> We process guest data on behalf of, and under the instructions of, the host.</li>
+          <li><strong>Hosts control retention.</strong> Hosts can configure how long guest data is retained and can delete guest records at any time.</li>
+          <li><strong>Hosts are responsible</strong> for having a lawful basis for collecting guest data and for providing guests with appropriate notice under any local privacy laws that apply to their properties.</li>
+        </ul>
+        <div class="highlight-box">
+          <p>If you are a guest and have questions about why a particular host collects your data, or how it is used beyond what GuestKey provides, please contact the host directly. You may also contact GuestKey at <strong>privacy@guestkey.co</strong> and we will assist where we can.</p>
+        </div>
+      </section>
+
+      <!-- 8. Data Retention & Host Control -->
+      <section class="policy-section" id="s8">
+        <h2><span class="section-number">8</span> Data Retention &amp; Host Control</h2>
+        <p>GuestKey gives hosts granular control over how long guest data is retained.</p>
+
+        <div class="info-card">
+          <h3><span class="card-dot"></span> Default Retention</h3>
+          <ul>
+            <li>Guest registration data is retained for the duration of the host&rsquo;s active account, plus <strong>30 days</strong> following account closure</li>
+            <li>This allows hosts to reference records and complete any outstanding obligations</li>
+          </ul>
+        </div>
+
+        <div class="info-card" style="margin-top: 16px;">
+          <h3><span class="card-dot"></span> Host-Configurable Options</h3>
+          <ul>
+            <li><strong>Custom retention periods</strong> &mdash; hosts can configure auto-deletion of guest data 90, 180, or 365 days after checkout</li>
+            <li><strong>Data export</strong> &mdash; hosts can export all guest data at any time in standard formats (CSV and JSON)</li>
+            <li><strong>Individual deletion</strong> &mdash; hosts can delete a single guest&rsquo;s record at any time</li>
+            <li><strong>Bulk deletion</strong> &mdash; hosts can delete all guest records for a property or date range</li>
+          </ul>
+        </div>
+
+        <div class="info-card" style="margin-top: 16px;">
+          <h3><span class="card-dot"></span> Account Closure</h3>
+          <ul>
+            <li>When a host closes their GuestKey account, all associated guest data is permanently and irreversibly deleted within <strong>30 days</strong></li>
+            <li>Hosts are encouraged to export their data before closing an account if they need to retain it</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 9. Guest Rights -->
+      <section class="policy-section" id="s9">
+        <h2><span class="section-number">9</span> Guest Rights</h2>
+        <p>As a guest whose information was collected through a GuestKey portal, you have the following rights regarding your personal data.</p>
+
+        <div class="rights-list">
+          <div class="right-item">
+            <span class="right-label">Access</span>
+            <span class="right-desc">You may request a copy of the personal information we hold about you. We will provide it in a readable format within a reasonable timeframe.</span>
+          </div>
+          <div class="right-item">
+            <span class="right-label">Deletion</span>
+            <span class="right-desc">You may request that your personal data be deleted. We will process the deletion and notify the relevant host. Note that some data may be required to be retained by the host for legal or regulatory compliance.</span>
+          </div>
+          <div class="right-item">
+            <span class="right-label">Correction</span>
+            <span class="right-desc">If your registration data is inaccurate or incomplete, you may request that it be corrected. Contact us or work directly with your host.</span>
+          </div>
+          <div class="right-item">
+            <span class="right-label">Portability</span>
+            <span class="right-desc">You may request your data in a machine-readable format (JSON). We will provide a structured export of your registration record upon request.</span>
+          </div>
+        </div>
+
+        <p>To exercise any of these rights, email <a href="mailto:privacy@guestkey.co">privacy@guestkey.co</a> with your request. Please include the property name or host name, your approximate stay dates, and the email or phone number you used to register. We will respond within 30 days.</p>
+      </section>
+
+      <!-- 10. Security -->
+      <section class="policy-section" id="s10">
+        <h2><span class="section-number">10</span> Security</h2>
+        <p>We take reasonable and appropriate technical and organizational measures to protect personal data against unauthorized access, alteration, disclosure, and destruction.</p>
+        <ul>
+          <li><strong>Encryption in transit and at rest</strong> &mdash; all data is transmitted over TLS 1.2 or higher; data stored in our infrastructure is encrypted at rest</li>
+          <li><strong>API credential security</strong> &mdash; host API credentials for connected third-party services are stored with encryption and never exposed in plaintext</li>
+          <li><strong>Payment security</strong> &mdash; payment data is handled entirely by our PCI-compliant payment processor; we never store card numbers or raw payment credentials</li>
+          <li><strong>OTP verification</strong> &mdash; requiring guests to verify both email and phone via one-time passcode prevents fake or reused contact information from entering the system</li>
+          <li><strong>Access controls</strong> &mdash; access to production data is limited to authorized personnel with a legitimate operational need</li>
+          <li><strong>Audit logging</strong> &mdash; key actions within the platform are logged to support security review and incident response</li>
+          <li><strong>Regular security reviews</strong> &mdash; we periodically review our systems, configurations, and third-party integrations for security risks</li>
+        </ul>
+        <p>No method of transmission over the internet or electronic storage is 100% secure. While we work to protect your information, we cannot guarantee absolute security.</p>
+      </section>
+
+      <!-- 11. Cookies & Tracking -->
+      <section class="policy-section" id="s11">
+        <h2><span class="section-number">11</span> Cookies &amp; Tracking</h2>
+        <p>GuestKey uses a minimal number of cookies and similar technologies, strictly for the purpose of operating the platform.</p>
+        <ul>
+          <li><strong>Session and authentication cookies</strong> &mdash; used to maintain your logged-in state while you use the platform; required for the service to function</li>
+          <li><strong>No third-party advertising cookies</strong> &mdash; we do not use cookies that track you across other websites or serve targeted advertisements</li>
+          <li><strong>No cross-site tracking</strong> &mdash; we do not share browsing behavior with advertising networks</li>
+          <li><strong>Basic analytics</strong> &mdash; we may collect aggregate, anonymized usage data (page views, feature usage) to improve the platform; this data does not include personal identifiers and is not linked to individual users</li>
+        </ul>
+        <p>Guest registration portals do not set advertising or tracking cookies. If you use a browser that restricts cookies, session management may be affected.</p>
+      </section>
+
+      <!-- 12. Children's Privacy -->
+      <section class="policy-section" id="s12">
+        <h2><span class="section-number">12</span> Children&rsquo;s Privacy</h2>
+        <p>GuestKey is not directed at children under the age of 13, and we do not knowingly collect personal information from children under 13.</p>
+        <p>Guest registration is designed for adults 18 years of age and older, consistent with local lodging laws and regulations that apply to short-term rental guests. Hosts may have their own age requirements for guests, which apply independently of this policy.</p>
+        <p>If you believe that a child under 13 has submitted personal information through GuestKey, please contact us at <a href="mailto:privacy@guestkey.co">privacy@guestkey.co</a> and we will take steps to delete that information promptly.</p>
+      </section>
+
+      <!-- 13. California Privacy Rights (CCPA) -->
+      <section class="policy-section" id="s13">
+        <h2><span class="section-number">13</span> California Privacy Rights (CCPA)</h2>
+        <p>If you are a California resident, the California Consumer Privacy Act (CCPA) grants you additional rights regarding your personal information.</p>
+
+        <div class="rights-list">
+          <div class="right-item">
+            <span class="right-label">Know</span>
+            <span class="right-desc">You have the right to know what categories of personal information we collect about you, the purposes for which we use it, and whether it is sold or disclosed to third parties.</span>
+          </div>
+          <div class="right-item">
+            <span class="right-label">Delete</span>
+            <span class="right-desc">You have the right to request deletion of your personal information, subject to certain exceptions required by law or for us to complete transactions.</span>
+          </div>
+          <div class="right-item">
+            <span class="right-label">Opt-Out</span>
+            <span class="right-desc">You have the right to opt out of the sale of your personal information. <strong>GuestKey does not sell personal information</strong>, so this right is satisfied without any action on your part.</span>
+          </div>
+          <div class="right-item">
+            <span class="right-label">Non-Discrimination</span>
+            <span class="right-desc">You have the right not to receive discriminatory treatment for exercising your CCPA privacy rights. Exercising these rights will not affect your ability to use GuestKey or any host&rsquo;s property.</span>
+          </div>
+        </div>
+
+        <p>To exercise California privacy rights, email <a href="mailto:privacy@guestkey.co">privacy@guestkey.co</a>. We will verify your identity before processing a request and will respond within the timeframes required by law.</p>
+      </section>
+
+      <!-- 14. International Data -->
+      <section class="policy-section" id="s14">
+        <h2><span class="section-number">14</span> International Data</h2>
+        <p>GuestKey is operated in the United States. All data collected through the platform is processed and stored on US-based cloud infrastructure.</p>
+        <p>If you are located outside the United States and use GuestKey (or register as a guest through a host&rsquo;s portal), your personal information will be transferred to and processed in the United States. Data protection laws in the US may differ from those in your country of residence.</p>
+        <p>By using the platform or completing a guest registration, you acknowledge that your data will be transferred to and processed in the United States in accordance with this Privacy Policy.</p>
+        <p>Hosts with guests subject to international privacy regulations (such as GDPR in the European Economic Area) are responsible for ensuring they have a lawful basis for transferring and processing that data through GuestKey.</p>
+      </section>
+
+      <!-- 15. Changes to This Policy -->
+      <section class="policy-section" id="s15">
+        <h2><span class="section-number">15</span> Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time as the platform evolves or as legal requirements change. When we make changes:</p>
+        <ul>
+          <li><strong>Minor updates</strong> &mdash; corrections, clarifications, and non-material changes will be posted on this page with an updated &ldquo;Last updated&rdquo; date</li>
+          <li><strong>Material changes</strong> &mdash; if we make changes that substantially affect how we collect or use personal data, we will notify active hosts via email with reasonable advance notice before the changes take effect</li>
+        </ul>
+        <p>Your continued use of GuestKey after the effective date of any updated policy constitutes your acceptance of the changes. If you do not agree to the updated policy, you should discontinue use of the platform and contact us to close your account.</p>
+        <p>We encourage hosts to review this policy periodically and to update any guest-facing notices they provide to reflect any material changes.</p>
+      </section>
+
+      <hr class="policy-divider" />
+
+      <!-- 16. Contact -->
+      <section class="policy-section" id="s16">
+        <h2><span class="section-number">16</span> Contact Us</h2>
+        <p>If you have questions, concerns, or requests related to this Privacy Policy or the handling of your personal information, please reach out. We take privacy inquiries seriously and will respond promptly.</p>
+        <div class="contact-block">
+          <h3>Privacy Inquiries</h3>
+          <p>For data access requests, deletion requests, or general privacy questions:</p>
+          <a href="mailto:privacy@guestkey.co" class="contact-email">privacy@guestkey.co</a>
+          <p class="contact-address">
+            Big Toy Stays LLC &mdash; operating as GuestKey<br />
+            Wisconsin, United States
+          </p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════════════════════ -->
+  <footer class="landing-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span class="brand-mark" style="color:var(--accent);font-size:1.4rem;line-height:1;">&#9670;</span>
+          <span style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.35rem;color:var(--text-on-dark);letter-spacing:-0.02em;">GuestKey</span>
+        </div>
+        <p>Guest experience platform for<br />vacation rental hosts.</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h5>Product</h5>
+          <a href="/#principles">Why GuestKey</a>
+          <a href="/#features">Features</a>
+          <a href="/#how-it-works">How It Works</a>
+          <a href="/#pricing">Pricing</a>
+          <a href="https://rega.guestkey.co/ap/5555555?stay=1" target="_blank" rel="noopener">Live Demo</a>
+        </div>
+        <div>
+          <h5>Company</h5>
+          <a href="/">Home</a>
+          <a href="mailto:privacy@guestkey.co">Contact</a>
+        </div>
+        <div>
+          <h5>Legal</h5>
+          <a href="/privacy.html" aria-current="page" style="color:var(--text-on-dark);">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 GuestKey. All rights reserved. Big Toy Stays LLC.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
