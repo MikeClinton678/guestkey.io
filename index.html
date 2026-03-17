@@ -973,10 +973,10 @@
               required
             />
             <button type="submit" class="btn-primary btn-lg">
-              Start Free Trial
+              Join Waitlist
             </button>
           </form>
-          <p class="hero-note">No credit card required &middot; 14-day free trial &middot; Cancel anytime</p>
+          <p class="hero-note">Early access launching soon &middot; Be first to know &middot; No spam</p>
         </div>
 
       </div>
@@ -1192,7 +1192,7 @@
           <li>Email &amp; SMS messaging</li>
           <li>Admin dashboard</li>
         </ul>
-        <button class="btn-outline btn-block" onclick="showComingSoon()">Start Free Trial</button>
+        <button class="btn-outline btn-block" onclick="showComingSoon()">Join Waitlist</button>
       </div>
 
       <!-- Professional (Featured) -->
@@ -1212,7 +1212,7 @@
           <li>Custom branding</li>
           <li>Priority support</li>
         </ul>
-        <button class="btn-primary btn-block" onclick="showComingSoon()">Start Free Trial</button>
+        <button class="btn-primary btn-block" onclick="showComingSoon()">Join Waitlist</button>
       </div>
 
       <!-- Portfolio -->
@@ -1243,9 +1243,9 @@
       <h2>Stop chasing guests.<br />Start enforcing registration.</h2>
       <p>Join hosts who've eliminated unauthorized access and streamlined every check-in.</p>
       <button class="btn-primary btn-lg" onclick="showComingSoon()">
-        Get Started &mdash; It's Free
+        Join the Waitlist
       </button>
-      <p class="hero-note" style="margin-top: 12px;">14-day trial &middot; No credit card &middot; Setup in 10 minutes</p>
+      <p class="hero-note" style="margin-top: 12px;">Early access launching soon &middot; Be the first to know</p>
     </div>
   </section>
 
@@ -1296,16 +1296,40 @@
   }
 
   function showComingSoon() {
-    showToast('Coming soon — GuestKey is in early access. Drop your email in the hero to join the waitlist!');
+    document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' });
+    setTimeout(function() { document.getElementById('heroEmail').focus(); }, 600);
   }
 
-  // ─── Hero Email Form ──────────────────────────────────────────────────────
+  // ─── Waitlist Form → Slack ─────────────────────────────────────────────────
   function handleHeroSubmit(e) {
     e.preventDefault();
     var email = document.getElementById('heroEmail').value.trim();
     if (!email) return;
-    showToast('Thanks! We\'ll be in touch at ' + email + ' when we launch. ✓');
-    document.getElementById('heroEmail').value = '';
+    var btn = e.target.querySelector('button[type="submit"]');
+    btn.textContent = 'Joining...';
+    btn.disabled = true;
+
+    fetch('https://guestkey-waitlist.mikeclinton.workers.dev', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email })
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.success) {
+        showToast('You\'re on the list! We\'ll reach out to ' + email + ' soon.');
+        document.getElementById('heroEmail').value = '';
+      } else {
+        showToast('Something went wrong. Please try again.');
+      }
+    })
+    .catch(function() {
+      showToast('Network error. Please try again.');
+    })
+    .finally(function() {
+      btn.textContent = 'Join Waitlist';
+      btn.disabled = false;
+    });
   }
 
   // ─── Lock Animation ───────────────────────────────────────────────────────
