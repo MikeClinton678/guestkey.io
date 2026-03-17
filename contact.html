@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — GuestKey</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #F8FAFC; color: #0F172A; min-height: 100vh; display: flex; flex-direction: column; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(11, 17, 32, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(148, 163, 184, 0.1); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { color: #F1F5F9; font-weight: 700; font-size: 1.15rem; text-decoration: none; letter-spacing: -0.02em; }
+    .nav-brand span { color: #06B6D4; margin-right: 6px; }
+    .nav-back { color: #94A3B8; text-decoration: none; font-size: 0.85rem; font-weight: 500; }
+    .nav-back:hover { color: #F1F5F9; }
+
+    .hero { background: #0B1120; padding: 120px 24px 60px; text-align: center; }
+    .hero h1 { color: #F1F5F9; font-size: 2rem; font-weight: 800; margin-bottom: 8px; }
+    .hero p { color: #94A3B8; font-size: 1rem; }
+
+    main { flex: 1; max-width: 560px; margin: -30px auto 60px; padding: 0 24px; width: 100%; }
+
+    .contact-card { background: #fff; border-radius: 16px; border: 1px solid #E2E8F0; padding: 36px 32px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 0.82rem; font-weight: 600; color: #475569; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .form-input, .form-textarea { width: 100%; padding: 12px 16px; border: 1px solid #E2E8F0; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 0.92rem; color: #0F172A; transition: border-color 0.2s; }
+    .form-input:focus, .form-textarea:focus { outline: none; border-color: #06B6D4; box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1); }
+    .form-textarea { min-height: 120px; resize: vertical; }
+
+    select.form-input { appearance: none; background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23475569' d='M6 8L1 3h10z'/%3E%3C/svg%3E") no-repeat right 14px center; padding-right: 36px; }
+
+    .btn-submit { width: 100%; padding: 14px; background: linear-gradient(135deg, #06B6D4, #22D3EE); color: #0B1120; font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 700; border: none; border-radius: 8px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+    .btn-submit:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(6, 182, 212, 0.3); }
+    .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+    .success-msg { display: none; text-align: center; padding: 40px 20px; }
+    .success-msg .material-icons-outlined { font-size: 3rem; color: #06B6D4; margin-bottom: 12px; }
+    .success-msg h3 { font-size: 1.2rem; color: #0F172A; margin-bottom: 8px; }
+    .success-msg p { color: #64748B; font-size: 0.9rem; }
+
+    footer { background: #0B1120; color: #94A3B8; padding: 40px 24px 24px; font-size: 0.82rem; margin-top: auto; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+    .footer-inner a { color: #94A3B8; text-decoration: none; margin: 0 12px; }
+    .footer-inner a:hover { color: #F1F5F9; }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.5rem; }
+      .contact-card { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-brand"><span>&#9670;</span> GuestKey</a>
+      <a href="/" class="nav-back">&larr; Back to Home</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <h1>Contact Us</h1>
+    <p>Questions, feedback, or partnership inquiries — we'd love to hear from you.</p>
+  </div>
+
+  <main>
+    <div class="contact-card">
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="contactName">Your Name</label>
+          <input type="text" id="contactName" class="form-input" placeholder="Jane Smith" required />
+        </div>
+        <div class="form-group">
+          <label for="contactEmail">Email</label>
+          <input type="email" id="contactEmail" class="form-input" placeholder="jane@example.com" required />
+        </div>
+        <div class="form-group">
+          <label for="contactTopic">Topic</label>
+          <select id="contactTopic" class="form-input" required>
+            <option value="">Select a topic...</option>
+            <option value="general">General Inquiry</option>
+            <option value="privacy">Privacy / Data Request</option>
+            <option value="legal">Legal / Terms Question</option>
+            <option value="partnership">Partnership / Integration</option>
+            <option value="pricing">Pricing Feedback</option>
+            <option value="bug">Bug Report</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="contactMessage">Message</label>
+          <textarea id="contactMessage" class="form-textarea" placeholder="Tell us what's on your mind..." required></textarea>
+        </div>
+        <button type="submit" class="btn-submit" id="contactSubmitBtn">Send Message</button>
+      </form>
+
+      <div class="success-msg" id="successMsg">
+        <span class="material-icons-outlined">check_circle</span>
+        <h3>Message sent!</h3>
+        <p>We'll get back to you as soon as we can. Thank you for reaching out.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>&copy; 2026 GuestKey by Big Toy Stays LLC. All rights reserved.</p>
+      <p style="margin-top:8px;">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/about">About</a>
+        <a href="/">Home</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    var WAITLIST_URL = 'https://guestkey-waitlist.mikeclinton.workers.dev';
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = document.getElementById('contactSubmitBtn');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      var data = {
+        type: 'contact_form',
+        name: document.getElementById('contactName').value.trim(),
+        email: document.getElementById('contactEmail').value.trim(),
+        topic: document.getElementById('contactTopic').value,
+        message: document.getElementById('contactMessage').value.trim()
+      };
+
+      fetch(WAITLIST_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      .then(function(r) { return r.json(); })
+      .then(function(resp) {
+        document.getElementById('contactForm').style.display = 'none';
+        document.getElementById('successMsg').style.display = 'block';
+      })
+      .catch(function() {
+        document.getElementById('contactForm').style.display = 'none';
+        document.getElementById('successMsg').style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

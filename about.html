@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — GuestKey</title>
+  <meta name="description" content="GuestKey was built by a vacation rental host who got frustrated enough to build the solution himself. The story of going from duct-tape systems to a unified guest experience platform." />
+  <meta name="keywords" content="GuestKey, about, founder story, vacation rental, guest registration, noise monitoring, smart home, Airbnb Superhost" />
+  <meta name="author" content="GuestKey" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%230B1120'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='18' fill='%2306B6D4'%3E%E2%97%86%3C/text%3E%3C/svg%3E" type="image/svg+xml" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://guestkey.co/about" />
+  <meta property="og:title" content="About GuestKey — Built by a Host. For Hosts." />
+  <meta property="og:description" content="The story of going from duct-tape systems to a unified guest experience platform. Built and funded by a solo founder who's also the first customer." />
+  <meta property="og:image" content="https://guestkey.co/og-image.png" />
+  <meta property="og:site_name" content="GuestKey" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About GuestKey — Built by a Host. For Hosts." />
+  <meta name="twitter:description" content="The story of going from duct-tape systems to a unified guest experience platform." />
+  <meta name="twitter:image" content="https://guestkey.co/og-image.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ═══════════════════════════════════════════════════════════════════════════
+       GuestKey — About Us Page
+       Dark nav + storytelling layout — matches main site aesthetic
+       ═══════════════════════════════════════════════════════════════════════════ */
+
+    :root {
+      --bg-dark:            #0B1120;
+      --bg-dark-raised:     #111827;
+      --bg-dark-card:       #1E293B;
+      --bg-light:           #F8FAFC;
+      --bg-white:           #FFFFFF;
+      --text-on-dark:       #F1F5F9;
+      --text-on-dark-muted: #94A3B8;
+      --text-dark:          #0F172A;
+      --text-muted:         #64748B;
+      --text-light:         #94A3B8;
+      --accent:             #06B6D4;
+      --accent-bright:      #22D3EE;
+      --accent-deep:        #0891B2;
+      --accent-muted:       rgba(6, 182, 212, 0.12);
+      --accent-glow:        rgba(6, 182, 212, 0.08);
+      --border-dark:        rgba(148, 163, 184, 0.12);
+      --border-light:       #E2E8F0;
+      --status-red:         #EF4444;
+      --status-green:       #10B981;
+      --radius:             8px;
+      --radius-lg:          16px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-dark);
+      background: var(--bg-light);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    a:hover { color: var(--accent-bright); }
+
+    /* ─── Navigation ────────────────────────────────────────────────────── */
+    .landing-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(11, 17, 32, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .nav-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      color: var(--accent);
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    .brand-text {
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: var(--text-on-dark);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-back {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-on-dark-muted);
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-back:hover { color: var(--text-on-dark); }
+    .nav-back svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* ─── Page Layout ───────────────────────────────────────────────────── */
+    .page-wrapper {
+      padding-top: 80px;
+      min-height: 100vh;
+      background: var(--bg-light);
+    }
+
+    /* ─── Hero Header ──────────────────────────────────────────────────── */
+    .about-hero {
+      background: var(--bg-dark);
+      padding: 80px 32px 72px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-hero::before {
+      content: '';
+      position: absolute;
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .about-hero-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .about-hero h1 {
+      font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+      font-weight: 800;
+      color: var(--text-on-dark);
+      letter-spacing: -0.035em;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .about-hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-on-dark-muted);
+      line-height: 1.65;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    /* ─── Story Content ────────────────────────────────────────────────── */
+    .story-body {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 72px 32px 80px;
+    }
+
+    .story-section {
+      margin-bottom: 56px;
+    }
+
+    .story-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .story-section h2 {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .story-section p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+
+    .story-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .story-section a {
+      font-weight: 500;
+    }
+
+    /* ─── Section Divider ──────────────────────────────────────────────── */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 56px 0;
+    }
+
+    .section-divider::before,
+    .section-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border-light);
+    }
+
+    .section-divider .divider-diamond {
+      color: var(--accent);
+      font-size: 0.75rem;
+      opacity: 0.5;
+    }
+
+    /* ─── Pull Quote ───────────────────────────────────────────────────── */
+    .pull-quote {
+      margin: 48px 0;
+      padding: 32px 36px;
+      border-left: 3px solid var(--accent);
+      background: var(--accent-glow);
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    }
+
+    .pull-quote p {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.55;
+      font-style: italic;
+      margin-bottom: 0;
+    }
+
+    .pull-quote .quote-attr {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      font-style: normal;
+      margin-top: 12px;
+    }
+
+    /* ─── Timeline ─────────────────────────────────────────────────────── */
+    .timeline {
+      position: relative;
+      padding-left: 40px;
+      margin: 32px 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 11px;
+      top: 4px;
+      bottom: 4px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent), var(--border-light));
+      border-radius: 1px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 32px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -33px;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 2px solid var(--bg-light);
+      box-shadow: 0 0 0 3px var(--accent-muted);
+    }
+
+    .timeline-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .timeline-item h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+      letter-spacing: -0.015em;
+    }
+
+    .timeline-item p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ─── Problem List ─────────────────────────────────────────────────── */
+    .problem-list {
+      list-style: none;
+      margin: 20px 0 16px;
+    }
+
+    .problem-list li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 14px;
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .problem-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+      background: var(--status-red);
+      opacity: 0.7;
+    }
+
+    .problem-list li strong {
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    /* ─── Solution List ────────────────────────────────────────────────── */
+    .solution-list {
+      list-style: none;
+      margin: 20px 0 16px;
+    }
+
+    .solution-list li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 14px;
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .solution-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+      background: var(--status-green);
+      opacity: 0.7;
+    }
+
+    .solution-list li strong {
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    /* ─── Stats Callout ────────────────────────────────────────────────── */
+    .stats-callout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin: 48px 0;
+    }
+
+    .stat-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      text-align: center;
+    }
+
+    .stat-card.before {
+      border-color: rgba(239, 68, 68, 0.2);
+      background: rgba(239, 68, 68, 0.03);
+    }
+
+    .stat-card.after {
+      border-color: rgba(6, 182, 212, 0.3);
+      background: var(--accent-glow);
+    }
+
+    .stat-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 10px;
+    }
+
+    .stat-card.before .stat-label {
+      color: var(--status-red);
+    }
+
+    .stat-card.after .stat-label {
+      color: var(--accent);
+    }
+
+    .stat-number {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-card.before .stat-number {
+      color: var(--status-red);
+    }
+
+    .stat-card.after .stat-number {
+      color: var(--accent);
+    }
+
+    .stat-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ─── "What We Are NOT" Box ────────────────────────────────────────── */
+    .not-box {
+      background: var(--bg-dark);
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+      margin: 48px 0;
+    }
+
+    .not-box h2 {
+      color: var(--text-on-dark);
+      margin-bottom: 20px;
+    }
+
+    .not-box p {
+      color: var(--text-on-dark-muted);
+    }
+
+    .not-list {
+      list-style: none;
+      margin: 16px 0;
+    }
+
+    .not-list li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 12px;
+      font-size: 0.98rem;
+      color: var(--text-on-dark-muted);
+      line-height: 1.65;
+    }
+
+    .not-list li::before {
+      content: '\00D7';
+      position: absolute;
+      left: 2px;
+      top: -1px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--status-red);
+      opacity: 0.8;
+    }
+
+    .not-list li strong {
+      color: var(--text-on-dark);
+    }
+
+    .focus-line {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .focus-line p {
+      font-size: 1.05rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* ─── CTA Section ──────────────────────────────────────────────────── */
+    .about-cta {
+      background: var(--bg-dark);
+      padding: 80px 32px;
+      text-align: center;
+    }
+
+    .about-cta-inner {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .about-cta .cta-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .about-cta h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--text-on-dark);
+      letter-spacing: -0.025em;
+      margin-bottom: 16px;
+    }
+
+    .about-cta p {
+      font-size: 1.05rem;
+      color: var(--text-on-dark-muted);
+      line-height: 1.65;
+      margin-bottom: 32px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-bright));
+      color: var(--bg-dark);
+      border: none;
+      padding: 16px 36px;
+      border-radius: var(--radius);
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      letter-spacing: 0.02em;
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+    }
+    .btn-primary:hover {
+      box-shadow: 0 4px 24px rgba(6, 182, 212, 0.35);
+      transform: translateY(-1px);
+      color: var(--bg-dark);
+    }
+
+    /* ─── Solo Founder Badge ───────────────────────────────────────────── */
+    .founder-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: 100px;
+      padding: 8px 20px 8px 10px;
+      margin-bottom: 32px;
+    }
+
+    .founder-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--bg-dark);
+    }
+
+    .founder-badge-text {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .founder-badge-text strong {
+      color: var(--text-dark);
+    }
+
+    /* ─── Footer ───────────────────────────────────────────────────────── */
+    .landing-footer {
+      background: var(--bg-dark);
+      padding: 64px 32px 0;
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 2fr;
+      gap: 60px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .footer-brand p {
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: var(--text-on-dark-muted);
+      line-height: 1.6;
+    }
+
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .footer-links h5 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-on-dark-muted);
+      margin-bottom: 16px;
+    }
+
+    .footer-links a {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--text-light);
+      padding: 4px 0;
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+    .footer-links a:hover { color: var(--text-on-dark); }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    .footer-bottom p {
+      font-size: 0.78rem;
+      color: rgba(148, 163, 184, 0.3);
+    }
+
+    /* ─── Responsive ────────────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav-inner { padding: 14px 20px; }
+
+      .about-hero { padding: 56px 20px 56px; }
+      .hero-subtitle { font-size: 1rem; }
+
+      .story-body { padding: 48px 20px 56px; }
+
+      .stats-callout { grid-template-columns: 1fr; gap: 16px; }
+
+      .pull-quote { padding: 24px 24px; margin: 36px 0; }
+      .pull-quote p { font-size: 1.08rem; }
+
+      .not-box { padding: 28px 24px; margin: 36px 0; }
+
+      .section-divider { margin: 40px 0; }
+      .story-section { margin-bottom: 40px; }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .footer-links { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .landing-footer { padding: 48px 20px 0; }
+    }
+
+    @media (max-width: 480px) {
+      .about-hero h1 { font-size: 1.85rem; }
+      .timeline { padding-left: 32px; }
+      .timeline-item::before { left: -25px; }
+      .footer-links { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAVIGATION ═══════════════════════════════════════════════════════ -->
+  <nav class="landing-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <span class="brand-mark">&#9670;</span>
+        <span class="brand-text">GuestKey</span>
+      </a>
+      <a href="/" class="nav-back">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M10 3L5 8l5 5" />
+        </svg>
+        Back to Home
+      </a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- ═══ HERO ═══════════════════════════════════════════════════════════ -->
+    <header class="about-hero">
+      <div class="about-hero-inner">
+        <p class="hero-eyebrow">Our Story</p>
+        <h1>Built by a host.<br /><span>For hosts.</span></h1>
+        <p class="hero-subtitle">GuestKey wasn't born in a boardroom. It was born out of frustration with noise alerts, duct-tape integrations, and guests who never registered. This is the story of how one property changed everything.</p>
+      </div>
+    </header>
+
+    <!-- ═══ STORY BODY ════════════════════════════════════════════════════ -->
+    <main class="story-body">
+
+      <!-- The Founder Badge -->
+      <div class="founder-badge">
+        <div class="founder-avatar">MC</div>
+        <span class="founder-badge-text"><strong>Mike</strong> &mdash; Founder, Developer, First Customer</span>
+      </div>
+
+      <!-- ── The Property ──────────────────────────────────────────────── -->
+      <section class="story-section">
+        <h2>It started with one property</h2>
+        <p>I'm Mike. I bought a large 8-bedroom vacation rental in Twin Lakes, Wisconsin &mdash; <a href="https://www.airbnb.com/rooms/49157643" target="_blank" rel="noopener">EnglishPrairieBnB</a>. It sleeps 20+ adults. I'm a long-time Airbnb Superhost, and I love hosting large groups &mdash; bachelorette parties, family reunions, corporate retreats.</p>
+        <p>But hosting 20+ people under one roof comes with a unique set of problems. Problems that none of the existing tools were built to solve.</p>
+      </section>
+
+      <div class="section-divider"><span class="divider-diamond">&#9670;</span></div>
+
+      <!-- ── Three Strikes ─────────────────────────────────────────────── -->
+      <section class="story-section">
+        <h2>Three strikes and you're out</h2>
+        <p>Twin Lakes has a strict local ordinance: three police calls to your property and you lose your rental license. Not three violations. Three <em>calls</em>. Doesn't matter if the noise complaint is legitimate or a neighbor having a bad day.</p>
+
+        <div class="pull-quote">
+          <p>"With 20+ adults, noise management and guest accountability aren't optional &mdash; they're existential."</p>
+        </div>
+
+        <p>On top of that, Wisconsin rule <strong>ATCP 72.16</strong> requires all tourist rooming houses to record contact information for every adult guest (18+) staying at the property. Not just the booker &mdash; <em>every adult</em>. This isn't optional. It's the law. And I was doing it by hand, if at all.</p>
+
+        <p>I want to support large groups responsibly and be a respectful neighbor. But the tools I had weren't built for that.</p>
+      </section>
+
+      <div class="section-divider"><span class="divider-diamond">&#9670;</span></div>
+
+      <!-- ── The Duct-Tape Era ─────────────────────────────────────────── -->
+      <section class="story-section">
+        <h2>The duct-tape era</h2>
+        <p>Before GuestKey, I was running multiple disconnected systems that each did one thing:</p>
+
+        <ul class="problem-list">
+          <li><strong>StayFi</strong> for guest information collection (WiFi-gating)</li>
+          <li><strong>Minut</strong> for noise monitoring (7 devices throughout the property)</li>
+          <li><strong>A separate portal</strong> for security deposits</li>
+          <li><strong>Another separate portal</strong> for the digital guest guidebook</li>
+          <li><strong>Manual guest registration</strong> for local compliance</li>
+        </ul>
+
+        <p>Five different systems. None of them talked to each other. And guests were being sent to multiple different portals &mdash; one for the deposit, one for registration, one for the guidebook. A bad experience for them and a nightmare for me.</p>
+      </section>
+
+      <!-- ── What actually broke ───────────────────────────────────────── -->
+      <section class="story-section">
+        <h2>What actually broke</h2>
+        <p>The core failure was simple: I couldn't reliably reach the people in my property when noise got out of hand.</p>
+        <p>Minut would detect noise and send an alert to the primary booker &mdash; one person out of 20. That booker could claim their phone died. The other 19 adults? Never contacted. They had no idea the house was too loud.</p>
+        <p>I needed phone numbers for everyone. StayFi was supposed to collect guest info through WiFi-gating, but the data was unreliable. Guests entered fake emails, reused contacts, or just skipped WiFi entirely &mdash; mobile data bypasses the whole thing. On a good day, I'd get contact info for maybe 4-5 out of 20 adults. Usually less.</p>
+        <p>I hired a guy on Fiverr to wire up Zapier to connect StayFi and Minut. It worked for a while. Then it broke. I didn't know how to fix it. And I was back to manually asking guests for phone numbers, one by one, and entering them into Minut myself.</p>
+
+        <div class="pull-quote">
+          <p>"I absolutely hated it. I'd usually only do it reactively &mdash; after I got a noise alert. Not scalable."</p>
+        </div>
+      </section>
+
+      <div class="section-divider"><span class="divider-diamond">&#9670;</span></div>
+
+      <!-- ── The AI Moment ─────────────────────────────────────────────── -->
+      <section class="story-section">
+        <h2>The AI moment</h2>
+        <p>When AI-assisted coding became viable, something clicked. I'm not a traditional software developer. But I understood the problem deeply &mdash; I lived it every weekend. And now I had a tool that could help me build the solution.</p>
+        <p>So I started building. No Zapier. No duct tape. A single system that does everything automatically.</p>
+      </section>
+
+      <div class="section-divider"><span class="divider-diamond">&#9670;</span></div>
+
+      <!-- ── The Unification ───────────────────────────────────────────── -->
+      <section class="story-section">
+        <h2>One link. Everything unified.</h2>
+        <p>The breakthrough was realizing that guests were being sent to too many places. The registration step was the anchor &mdash; every adult has to do it. So I built everything around that moment.</p>
+        <p>One link gives every guest:</p>
+
+        <ul class="solution-list">
+          <li><strong>Registration</strong> &mdash; OTP-verified phone number. Can't be faked.</li>
+          <li><strong>Security deposit</strong> &mdash; gated. No deposit, no door code.</li>
+          <li><strong>Smart home controls</strong> &mdash; lock and unlock doors right from the portal.</li>
+          <li><strong>Digital guidebook</strong> &mdash; with real controls, not a static PDF nobody reads.</li>
+          <li><strong>Noise monitoring dashboard</strong> &mdash; all 7 sensors, near real-time. Guests can see their own noise levels before they even get an alert.</li>
+        </ul>
+
+        <p>No app download. No separate logins. One link, sent in the pre-arrival message.</p>
+      </section>
+
+      <div class="section-divider"><span class="divider-diamond">&#9670;</span></div>
+
+      <!-- ── The Noise Dashboard ───────────────────────────────────────── -->
+      <section class="story-section">
+        <h2>The noise dashboard no one else builds</h2>
+        <p>Here's something I noticed: noise monitoring platforms don't show noise data to guests. They alert the host. The host texts the guest. The guest argues. It's adversarial.</p>
+        <p>I used Minut's API to build a real-time dashboard showing all 7 sensors. Then I bought a low-cost Android tablet, locked it down, and mounted it on the wall in the main common area. It's always on, always showing the noise dashboard.</p>
+
+        <div class="pull-quote">
+          <p>"Guests can see exactly how loud they're being. It's not confrontational &mdash; it's informational. And it works."</p>
+        </div>
+
+        <p>When every guest registers with a verified phone number and can see the noise levels themselves, the dynamic shifts. It's not the host policing the guests. It's the group self-regulating.</p>
+      </section>
+
+      <div class="section-divider"><span class="divider-diamond">&#9670;</span></div>
+
+      <!-- ── The Results ───────────────────────────────────────────────── -->
+      <section class="story-section">
+        <h2>The results</h2>
+
+        <div class="stats-callout">
+          <div class="stat-card before">
+            <div class="stat-label">Before GuestKey</div>
+            <div class="stat-number">~20-30%</div>
+            <div class="stat-desc">of adult guests' contact info captured. Unverified. Often fake.</div>
+          </div>
+          <div class="stat-card after">
+            <div class="stat-label">With GuestKey</div>
+            <div class="stat-number">90-100%</div>
+            <div class="stat-desc">of adult guests' verified contact info captured. OTP-confirmed.</div>
+          </div>
+        </div>
+
+        <p>It's not perfect. Guests still underreport the number of adults sometimes, or make last-minute changes to who's coming. But the improvement is dramatic.</p>
+
+        <ul class="solution-list">
+          <li><strong>All registered adults</strong> get noise alerts &mdash; not just the booker</li>
+          <li><strong>Guests actually use the guidebook</strong> because it has real controls, not just information</li>
+          <li><strong>Fewer "how do I work the TV" messages</strong> at 11 PM</li>
+          <li><strong>Guest marketing opt-in data</strong> that's actually usable &mdash; 90%+ verified contacts vs. a handful of maybe-real emails</li>
+        </ul>
+      </section>
+
+      <div class="section-divider"><span class="divider-diamond">&#9670;</span></div>
+
+      <!-- ── What's Next ───────────────────────────────────────────────── -->
+      <section class="story-section">
+        <h2>What's next</h2>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-label">Now</div>
+            <h3>Guest experience platform</h3>
+            <p>Registration, deposits, smart home controls, guidebook, noise monitoring &mdash; all unified in one link. Running live on my own property.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-label">Building</div>
+            <h3>Welcome screen &amp; photo booth</h3>
+            <p>Letting guests customize what they see on property screens. A photo booth-style feature where guests submit photos that play on the TVs during their stay. Social tagging that drives property awareness.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-label">Building</div>
+            <h3>Guest marketing engine</h3>
+            <p>Guests opt in to property promotions &mdash; events, seasonal offers, return-guest discounts. Something StayFi does well, but now with 90-100% verified contact data instead of 20-30% unverified.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-label">Vision</div>
+            <h3>Platform for every host</h3>
+            <p>Everything I've built for my own property, available as a SaaS platform for vacation rental hosts everywhere. Same philosophy: one link, everything unified, no app downloads.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── What We Are NOT ───────────────────────────────────────────── -->
+      <div class="not-box">
+        <h2>What we are NOT</h2>
+        <ul class="not-list">
+          <li>We are <strong>NOT a PMS</strong>. We don't want to be. We don't sync calendars. We're not dependent on Airbnb, VRBO, or Booking.com integrations.</li>
+          <li>We are <strong>NOT a pricing tool</strong>. We don't do revenue management or dynamic pricing.</li>
+          <li>We are <strong>NOT trying to replace</strong> your existing booking workflow. We plug into it.</li>
+        </ul>
+        <div class="focus-line">
+          <p>Our focus: Elevating the digital guest experience while automating compliance.</p>
+        </div>
+      </div>
+
+      <div class="section-divider"><span class="divider-diamond">&#9670;</span></div>
+
+      <!-- ── Solo Founder ──────────────────────────────────────────────── -->
+      <section class="story-section">
+        <h2>Solo founder. Bootstrapped.</h2>
+        <p>GuestKey is built and funded by me &mdash; a solo founder who's also the host, the developer, and the first customer. No VC. No team of 50. No pitch decks or Series A rounds.</p>
+        <p>Just a host who got frustrated enough to build the solution himself, and realized other hosts have the exact same problems.</p>
+
+        <div class="pull-quote">
+          <p>"Every feature in GuestKey exists because I needed it at my own property first."</p>
+        </div>
+
+        <p>I'm not building this from a Silicon Valley office. I'm building it from the same desk where I respond to guest messages, check noise dashboards, and manage turnovers. That's not a limitation &mdash; it's the whole point.</p>
+      </section>
+
+    </main>
+
+    <!-- ═══ CTA ═══════════════════════════════════════════════════════════ -->
+    <section class="about-cta">
+      <div class="about-cta-inner">
+        <p class="cta-eyebrow">Early Access</p>
+        <h2>Sound familiar?</h2>
+        <p>If you're a vacation rental host dealing with noise complaints, guest accountability, or five different portals that don't talk to each other &mdash; GuestKey was built for you.</p>
+        <a href="/" class="btn-primary" onclick="this.href='/?modal=beta';">Apply for Early Access</a>
+      </div>
+    </section>
+
+    <!-- ═══ FOOTER ════════════════════════════════════════════════════════ -->
+    <footer class="landing-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <span style="color:var(--accent);font-size:1.4rem;line-height:1;">&#9670;</span>
+            <span style="font-weight:700;font-size:1.35rem;color:var(--text-on-dark);letter-spacing:-0.02em;">GuestKey</span>
+          </div>
+          <p>Guest experience platform for<br />vacation rental hosts.</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h5>Product</h5>
+            <a href="/#principles">Why GuestKey</a>
+            <a href="/#features">Features</a>
+            <a href="/#how-it-works">How It Works</a>
+            <a href="/#pricing">Pricing</a>
+            <a href="https://rega.guestkey.co/ap/5555555?stay=1" target="_blank" rel="noopener">Live Demo</a>
+          </div>
+          <div>
+            <h5>Company</h5>
+            <a href="/about" style="color:var(--text-on-dark);">About</a>
+            <a href="/">Home</a>
+            <a href="/contact">Contact</a>
+          </div>
+          <div>
+            <h5>Legal</h5>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 GuestKey. All rights reserved. <a href="https://rega.guestkey.co/ap/admin" style="color:rgba(148,163,184,0.15);text-decoration:none;margin-left:8px;">&#9670;</a></p>
+      </div>
+    </footer>
+
+  </div><!-- /.page-wrapper -->
+
+</body>
+</html>
